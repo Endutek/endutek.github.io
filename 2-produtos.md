@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: produto
 title: Produtos para manutenção industrial
 menu-title: Produtos
 permalink: /produtos/

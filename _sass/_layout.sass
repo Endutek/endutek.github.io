@@ -79,7 +79,8 @@
     margin-left: 0
     list-style: none
     > li
-        margin-bottom: $spacing-unit
+        margin-top: $spacing-unit / 2
+        margin-bottom: $spacing-unit / 2
 
 .post-meta
     font-size: $small-font-size
@@ -88,6 +89,9 @@
 .post-link
     display: block
     font-size: 24px
+    line-height: 1
+    margin-top: $spacing-unit / 2
+    margin-bottom: $spacing-unit / 2
 
 .post-header
     margin-bottom: $spacing-unit
@@ -100,3 +104,15 @@
 
 .post-content
     margin-bottom: $spacing-unit
+
+.lista-produtos
+    min-width: 10em
+    padding: $spacing-unit / 2
+    background-color: $grey-color-light
+    border-radius: 4px
+    +media-query($on-laptop)
+        padding: $spacing-unit / 4
+
+.lista-header
+    margin-bottom: $spacing-unit / 2
+    border-bottom: 1px solid $grey-color

@@ -1,5 +1,5 @@
 ---
-title: Conexões Pneumáticas \"Push-in\"
+title: Conexões Pneumáticas "Push-in"
 ---
 
 As conexões pneumáticas, também conhecidas como instantâneas, possuem uma grande variedade de modelos para satisfazer todas as necessidades de uma instalação pneumática.
