@@ -6,31 +6,37 @@ layout: default
   <div class="wrapper" data-grid="spacing">
 
     <article class="post" data-cell="3of4">
-    
+
       <header class="post-header">
         <h1 class="post-title">{{ page.title }}</h1>
       </header>
-    
+
       <div class="post-content">
         {{ content }}
       </div>
     
     </article>
-    
-    <aside class="lista-produtos" data-cell="1of4">
+
+    <aside class="lista lista-produtos" data-cell="1of4">
       
       <header class="lista-header">
         <h2>Produtos</h1>
       </header>
 
       {% for c in site.categorias %}{% capture categoria %}{% assign c_crumbs = c.url | split: '/' %}{{ c_crumbs[2] }}{% endcapture %}
-        <article>
-          <a class="post-link" href="{{ c.url | prepend: site.baseurl }}">{{ c.title }}</a>
-          {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
-            {% if p_categoria == categoria %}
-              <p><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></p>
-            {% endif %}
-          {% endfor %}
+        <article class="produtos-categoria">
+          <ul class="post-list">
+            <li class="produtos-item">
+              <a href="{{ c.url | prepend: site.baseurl }}" class="post-link">{{ c.title }}</a>
+            </li>
+            {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
+              {% if p_categoria == categoria %}
+                <li class="produtos-item produtos-subitem">
+                  <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
         </article>
       {% endfor %}
 

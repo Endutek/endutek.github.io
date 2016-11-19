@@ -24,6 +24,7 @@ collections:
     permalink: produtos/:path/
   aplicacoes:
     output: true
+    permalink: aplicacoes/:path/
 
 defaults:
   - scope:

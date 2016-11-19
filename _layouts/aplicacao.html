@@ -3,16 +3,34 @@ layout: default
 ---
 <div class="page-content">
 
-  <article class="wrapper post">
+  <div class="wrapper" data-grid="spacing">
 
-    <header class="post-header">
-      <h1 class="post-title">{{ page.title }}</h1>
-    </header>
+  	<article class="post" data-cell="3of4">
+  	
+  	  <header class="post-header">
+  	    <h1 class="post-title">{{ page.title }}</h1>
+  	  </header>
+  	
+  	  <div class="post-content">
+  	    {{ content }}
+  	  </div>
+  	
+  	</article>
 
-    <div class="post-content">
-      {{ content }}
-    </div>
+    <aside class="lista lista-aplicacoes" data-cell="1of4">
 
-  </article>
+    	<header class="lista-header">
+    		<h2>Aplicações</h2>
+    	</header>
+
+    	{% for ap in site.aplicacoes %}
+    		<article>
+    			<a href="{{ ap.url | prepend: site.baseurl }}" class="post-link">{{ ap.title }}</a>
+    		</article>
+    	{% endfor %}
+
+    </aside>
+
+  </div>
 
 </div>
