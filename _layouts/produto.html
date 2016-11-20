@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+
+{% capture categoria %}{% assign page_crumbs = page.url | split: '/' %}{{ page_crumbs[2] }}{% endcapture %}
+
 <div class="page-content">
 
   <div class="wrapper" data-grid="spacing">
@@ -23,14 +26,14 @@ layout: default
         <h2>Produtos</h1>
       </header>
 
-      {% for c in site.categorias %}{% capture categoria %}{% assign c_crumbs = c.url | split: '/' %}{{ c_crumbs[2] }}{% endcapture %}
-        <article class="produtos-categoria">
+      {% for c in site.categorias %}{% capture c_categoria %}{% assign c_crumbs = c.url | split: '/' %}{{ c_crumbs[2] }}{% endcapture %}
+        <article class="produtos-categoria{% if c_categoria == categoria %} selected{% endif %}">
           <ul class="post-list">
             <li class="produtos-item">
               <a href="{{ c.url | prepend: site.baseurl }}" class="post-link">{{ c.title }}</a>
             </li>
             {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
-              {% if p_categoria == categoria %}
+              {% if p_categoria == c_categoria %}
                 <li class="produtos-item produtos-subitem">
                   <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
                 </li>

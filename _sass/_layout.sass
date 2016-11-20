@@ -88,7 +88,7 @@
 
 .post-link
     display: block
-    font-size: 24px
+    font-size: $base-font-size * 1.3
     line-height: 1
     margin-top: $spacing-unit / 3
     margin-bottom: $spacing-unit / 3
@@ -120,9 +120,39 @@
 .produtos-categoria
     margin-top: $spacing-unit / 2
     margin-bottom: $spacing-unit / 2
+    &:not(.selected)
+        .produtos-subitem
+            display: none
+        .post-list:hover
+            .produtos-subitem
+                display: block
+                animation: showlink 1s forwards ease-in-out
+                @for $i from 1 through 10
+                    &:nth-of-type(#{$i})
+                        animation-duration: .1s * $i
+    &.selected
+        .produtos-item:not(.produtos-subitem)
+            margin-left: -$spacing-unit / 1.5
+            margin-right: -$spacing-unit / 4
+            padding-left: $spacing-unit / 1.5
+            padding-right: $spacing-unit / 4
+            padding-top: 1px
+            padding-bottom: 1px
+            background-color: $brand-color
+            a
+                color: #fff
+        .produtos-subitem
+            display: block
 
-.produtos-item
-    .selected
-        color: $grey-color-dark
+    .produtos-subitem
+        padding-left: 1em
+        transform-origin: top left
 
-.produtos-subitem
+@keyframes showlink
+    0%
+        opacity: 0
+        transform: scale(0)
+    100%
+        opacity: 1
+        transform: scale(1)
+
