@@ -1,0 +1,16 @@
+<section class="section-contato" id="contato" data-modal="">
+	<form action="enviar_contato.php" class="wrapper">
+		<h4>Fale conosco</h4>
+		<p><label for="nome">Nome</label><input type="text" name="nome" placeholder="Nome Completo" required></p>
+		<div data-grid="spacing cols-2">
+			<p><label for="email">E-mail</label><input type="email" name="email" placeholder="email@dominio.com" required></p>
+			<p><label for="telefone">Telefone</label><input type="tel" name="telefone" placeholder="(00) 9 0000-0000" required></p>
+		</div>
+		<p><label for="mensagem">Mensagem</label><textarea name="mensagem" cols="30" rows="5" placeholder="Digite a sua mensagem"></textarea></p>
+		<p class="honeypot"><label for="honey">Se estiver vendo isto, deixe este campo em branco</label><input type="text" name="hone"></p>
+		<div data-grid="spacing row nowrap cols-2">
+			<p><a href="#x">FECHAR</a></p>
+			<p><button class="w100">ENVIAR</button></p>
+		</div>
+	</form>
+</section>

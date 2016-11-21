@@ -41,9 +41,8 @@
         position: absolute
         top: 9px
         right: $spacing-unit / 2
-        background-color: $background-color
-        border: 1px solid $grey-color-light
         border-radius: 5px
+        border: 1px solid transparent
         text-align: right
         .menu-icon
             display: block
@@ -61,9 +60,12 @@
         .trigger
             clear: both
             display: none
-        &:hover .trigger
-            display: block
-            padding-bottom: 5px
+        &:hover
+            background-color: $background-color
+            border: 1px solid $grey-color-light
+            .trigger
+                display: block
+                padding-bottom: 5px
         .page-link
             display: block
             padding: 5px 10px
@@ -115,6 +117,13 @@
 
 .post-content
     margin-bottom: $spacing-unit
+
+.section-features
+    padding-left: $spacing-unit
+    padding-right: $spacing-unit
+    +media-query($on-laptop)
+        padding-left: $spacing-unit / 2
+        padding-right: $spacing-unit / 2
 
 .lista-produtos
     min-width: 10em

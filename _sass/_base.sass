@@ -12,6 +12,9 @@ body
     -o-font-feature-settings: "kern" 1
     font-feature-settings: "kern" 1
     font-kerning: normal
+    box-sizing: border-box
+    *
+        box-sizing: inherit
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, %vertical-rhythm
     margin-top: $spacing-unit / 4
@@ -110,3 +113,27 @@ pre
         text-align: center
     +variant(small)
         font-size: $small-font-size
+
++module(modal)
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    margin: auto
+    overflow: auto
+    background-color: rgba($grey-color-dark, .9)
+    .wrapper
+        padding-top: $spacing-unit / 4
+        padding-bottom: $spacing-unit / 4
+        background-color: $background-color
+    &:not(:target)
+        display: none
+    &:target
+        animation: appear .3s ease-in-out
+
+@keyframes appear
+    0%
+        opacity: 0
+    100%
+        opacity: 1
