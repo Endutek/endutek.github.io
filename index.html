@@ -15,6 +15,7 @@ layout: default
             {% for tel in site.data.empresa.telefones %}
               <li><a href="tel:{{ tel.numero }}">{{ tel.title }}</a></li>
             {% endfor %}
+            <li><a href="mailto:{{ site.data.empresa.emails[0].mailto }}">{{ site.data.empresa.emails[0].mailto }}</a></li>
             <li><a href="#contato">Formulário de contato...</a></li>
           </ul>
         </div>
