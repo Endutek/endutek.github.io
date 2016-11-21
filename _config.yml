@@ -1,8 +1,9 @@
 title: Endutek Mangueiras e Conexões
 description: > 
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Somos uma empresa especializada no fornecimento de mangueiras e
+  conexões desde 1994. Atendemos as áreas metalúrgicas, auto-peças,
+  siderúrgicas, plásticos, papeleiros, químicos, entre outros, em
+  todo território nacional.
 baseurl: "" # e.g. /blog
 url: "http://endutek.com.br"
 
@@ -39,4 +40,8 @@ defaults:
       type: aplicacoes
     values:
       layout: aplicacao
+  - scope:
+      type: posts
+    values:
+      layout: post
 
