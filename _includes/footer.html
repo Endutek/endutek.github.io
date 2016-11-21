@@ -1,9 +1,15 @@
+<img src="/img/paisagem-rodape.svg" class="footer-image" width="100%" alt="Rodapé: silhueta urbana">
 <footer class="site-footer">
 
   <div class="wrapper">
 
     <h2 class="footer-heading">{{ site.title }}</h2>
-    <p>{{ site.description }}</p>
+    <p>{{ site.data.empresa.endereco }} - {{ site.data.empresa.cidade }}</p>
+    <p>
+      {% for telefone in site.data.empresa.telefones %}
+        {{ telefone.title }}
+      {% endfor %}
+    </p>
 
   </div>
 

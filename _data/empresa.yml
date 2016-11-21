@@ -1,0 +1,7 @@
+endereco: "Av. Dona Ruyce Ferraz Alvim, 379"
+cidade: "Diadema - SP"
+telefones:
+  - title: "(11) 4070-5808"
+    numero: "+551140705808"
+  - title: "(11) 4071-1808"
+    numero: "+551140711808"

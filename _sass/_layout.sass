@@ -5,13 +5,15 @@
 .site-header
     min-height: 56px
     width: 100%
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-
-    + *, + .page-content
-        padding-top: $spacing-unit + 56px
+    padding-top: 10px
+    padding-bottom: 35%
+    position: relative
+    background:
+        image: url('/img/paisagem-urbana.svg')
+        position: 50% 100%
+        size: 100%
+        repeat: no-repeat
+        color: #daf3ff
 
 .site-title
     font-size: 26px
@@ -67,6 +69,9 @@
             padding: 5px 10px
             margin: 5px
 
+.footer-image
+    margin-bottom: -1px
+
 .site-footer
     @extend %negativo
     font-size: $small-font-size
@@ -74,6 +79,11 @@
 
 .page-content
     padding: $spacing-unit 0
+
+    &.hero
+        background-color: #7fffd4
+        a
+            color: #026
 
 .post-list
     margin-left: 0
