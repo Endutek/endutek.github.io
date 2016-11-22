@@ -2,6 +2,17 @@
 layout: default
 ---
 
+<section class="page-content gallery">
+  <div class="wrapper">
+    <ul>
+      <li>produtos [destaques]</li>
+      <li>catálogos para download</li>
+      <li>call to action para Produtos</li>
+      <li>foto?</li>
+    </ul>
+  </div>
+</section>
+
 <section class="page-content hero">
   <div class="wrapper" data-grid="center spacing">
     <div data-cell="1of3"><img src="/img/mapa-do-Brasil.svg" alt="Mapa do Brasil"></div>
@@ -28,41 +39,19 @@ layout: default
   </div>
 </section>
 
-<section class="page-content section-features" data-grid="spacing">
+<section class="page-content section-features" data-grid="spacing" data-text="center">
 {% assign features = "/sobre/ /produtos/ /aplicacoes/" | split: " " %}
   {% for link in features %}
   
     {% for p in site.pages %}
       {% if p.permalink == link %}
-        <div data-cell="1of3">
+        <div data-cell="1of3" data-grid="column justify">
           <h3>{{ p.title }}</h3>
           <p>{{ p.content | strip_html | truncatewords: 15 }}</p>
-          <p><a href="{{ p.url | prepend: site.baseurl }}">CONTINUE LENDO</a></p>
+          <p data-cell="shrink"><a href="{{ p.url | prepend: site.baseurl }}" data-btn="round{% if link == '/produtos/' %} brand{% endif %}">{{ p.menu-title }}</a></p>
         </div>
       {% endif %}
     {% endfor %}
   
   {% endfor %}
-</section>
-
-<section class="page-content">
-  
-  <div class="wrapper">
-
-    <h1 class="page-heading">Informações técnicas</h1>
-  
-    <ul class="post-list">
-      {% for post in site.posts %}
-        <li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-          <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-          <p>{{ post.excerpt }}</p>
-        </li>
-      {% endfor %}
-    </ul>
-  
-    <p class="rss-subscribe">Assine o <a href="{{ "/feed.xml" | prepend: site.baseurl }}">feed RSS</a></p>
-  
-  </div>
-
 </section>

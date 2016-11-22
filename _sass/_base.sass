@@ -114,6 +114,36 @@ pre
     +variant(small)
         font-size: $small-font-size
 
++module(btn)
+    display: inline-block
+    padding: .5em 1em
+    background-color: $grey-color
+    text-decoration: none
+    color: #fff
+    cursor: pointer
+    transition: .3s ease-in-out
+    &:hover, &:focus
+        text-decoration: none
+        color: #fff
+        outline: none
+        box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba($grey-color, .5)
+    +variant(brand)
+        background-color: $brand-color
+        &:hover, &:focus
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba($brand-color, .5)
+    +variant(round)
+        border-radius: 500px
+
++module(block)
+    display: block
+    +variant(center)
+        margin-left: auto
+        margin-right: auto
+    +variant(inline)
+        display: inline-block
+    +variant(100%)
+        width: 100%
+
 +module(modal)
     position: fixed
     top: 0

@@ -27,20 +27,22 @@ layout: default
       </header>
 
       {% for c in site.categorias %}{% capture c_categoria %}{% assign c_crumbs = c.url | split: '/' %}{{ c_crumbs[2] }}{% endcapture %}
-        <article class="produtos-categoria{% if c_categoria == categoria %} selected{% endif %}">
+        <section class="produtos-categoria{% if c_categoria == categoria %} selected{% endif %}">
           <ul class="post-list">
             <li class="produtos-item">
               <a href="{{ c.url | prepend: site.baseurl }}" class="post-link">{{ c.title }}</a>
+              <ul>
+              {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
+                {% if p_categoria == c_categoria %}
+                  <li class="produtos-item produtos-subitem">
+                    <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              </ul>
             </li>
-            {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
-              {% if p_categoria == c_categoria %}
-                <li class="produtos-item produtos-subitem">
-                  <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
           </ul>
-        </article>
+        </section>
       {% endfor %}
 
     </aside>
