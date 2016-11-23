@@ -3,6 +3,8 @@ layout: default
 ---
 
 {% capture categoria %}{% assign page_crumbs = page.url | split: '/' %}{{ page_crumbs[2] }}{% endcapture %}
+{% capture subcategoria %}{% assign page_crumbs = page.url | split: '/' %}{{ page_crumbs[3] }}{% endcapture %}
+{% capture page_img %}{{ '/img/produtos/' | prepend: site.baseurl }}{{ categoria }}{% if subcategoria != '' %}{{ subcategoria | prepend: '/' }}{% endif %}{{ '.jpg' }}{% endcapture %}
 
 <div class="page-content">
 
@@ -15,8 +17,48 @@ layout: default
       </header>
 
       <div class="post-content">
+
+        {% for static_file in site.static_files %}
+          {% if static_file.path == page_img %}
+            <img src="{{ page_img }}" alt="page.title">
+          {% endif %}
+        {% endfor %}
+
         {{ content }}
+
+        {% if categoria != '' %}
+          <p data-grid="end"><button data-btn="round brand">Adicionar ao orçamento</button></p>
+        {% endif %}
+
+        <div data-grid="spacing">
+          <ul data-cell="1of2">
+          {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
+            {% if p_categoria == categoria %}
+              <li class="produtos-subitem">
+                <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+          <ul data-cell="1of2">
+            <li><a href="{{ site.baseurl }}/downloads/catalogo_endutek.pdf" target="_blank">Baixe o nosso catálogo</a></li>
+            <li><a href="{{ site.baseurl }}/downloads/PRO-S_catalogo_completo.pdf" target="_blank">Baixe o catálogo PRO-S</a></li>
+          </ul>
+        </div>
+
       </div>
+
+      <footer class="form-orcamento">
+        <form action="" method="post">
+          <h4>Orçamento</h4>
+          <p><label for="nome">Nome</label><input type="text" name="nome" placeholder="Nome completo" required></p>
+          <p><label for="email">E-mail</label><input type="email" name="email" placeholder="email@dominio.com" required></p>
+          <p><label for="telefone">Telefone</label><input type="tel" name="telefone" placeholder="(00) 9 0000 0000" required></p>
+          <p><label for="produtos">Produtos</label><input type="text" name="produtos" placeholder="" required></p>
+          <p><label for="mensagem">Mensagem</label><textarea name="mensagem" cols="30" rows="5"></textarea></p>
+          <p><button>Solicitar orçamento</button></p>
+        </form>
+      </footer>
     
     </article>
 

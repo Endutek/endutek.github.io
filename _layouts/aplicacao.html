@@ -1,6 +1,11 @@
 ---
 layout: default
 ---
+
+{% capture categoria %}{% assign page_crumbs = page.url | split: '/' %}{{ page_crumbs[2] }}{% endcapture %}
+{% capture subcategoria %}{% assign page_crumbs = page.url | split: '/' %}{{ page_crumbs[3] }}{% endcapture %}
+{% capture page_img %}{{ '/img/aplicacoes/' | prepend: site.baseurl }}{{ categoria }}{% if subcategoria != '' %}{{ subcategoria | prepend: '/' }}{% endif %}{{ '.jpg' }}{% endcapture %}
+
 <div class="page-content">
 
   <div class="wrapper" data-grid="spacing">
@@ -12,6 +17,11 @@ layout: default
   	  </header>
   	
   	  <div class="post-content">
+        {% for static_file in site.static_files %}
+          {% if static_file.path == page_img %}
+            <img src="{{ page_img }}" alt="page.title">
+          {% endif %}
+        {% endfor %}
   	    {{ content }}
   	  </div>
   	
