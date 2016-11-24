@@ -116,6 +116,7 @@ pre
 
 +module(btn)
     display: inline-block
+    text-align: center
     padding: .5em 1em
     background-color: $grey-color
     text-decoration: none
@@ -127,6 +128,8 @@ pre
         color: #fff
         outline: none
         box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba($grey-color, .5)
+    +variant(100%)
+        width: 100%
     +variant(brand)
         background-color: $brand-color
         &:hover, &:focus

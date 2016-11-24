@@ -27,7 +27,7 @@ layout: default
         {{ content }}
 
         {% if categoria != '' %}
-          <p data-grid="end"><button data-btn="round brand">Adicionar ao orçamento</button></p>
+          <div class="page-content"><button class="adicionar-produto" data-btn="round brand">Adicionar ao orçamento</button></div>
         {% endif %}
 
         <div data-grid="spacing">
@@ -40,10 +40,12 @@ layout: default
             {% endif %}
           {% endfor %}
           </ul>
-          <ul data-cell="1of2">
-            <li><a href="{{ site.baseurl }}/downloads/catalogo_endutek.pdf" target="_blank">Baixe o nosso catálogo</a></li>
-            <li><a href="{{ site.baseurl }}/downloads/PRO-S_catalogo_completo.pdf" target="_blank">Baixe o catálogo PRO-S</a></li>
-          </ul>
+          <div data-cell="1of2">
+            <h4>Catálogos</h4>
+            {% for download in site.data.features.catalogos %}
+              <p><a href="{{ site.baseurl }}/downloads/{{ download.file }}" target="_blank" data-btn="100%">{{ download.title }}</a></p>
+            {% endfor %}
+          </div>
         </div>
 
       </div>

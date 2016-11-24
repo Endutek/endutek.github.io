@@ -1,0 +1,6 @@
+{% assign img_url = include.folder | prepend: site.baseurl | append: include.filename | append: '.jpg' %}
+{% for static_file in site.static_files %}
+  {% if static_file.path == img_url %}
+      <img src="{{ img_url }}" alt="{{ p.title }}">
+  {% endif %}
+{% endfor %}

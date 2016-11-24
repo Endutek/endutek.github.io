@@ -3,6 +3,8 @@ layout: page
 title: Endutek - A sua empresa de mangueiras e conexões
 menu-title: Empresa
 permalink: /sobre/
+excerpt: >
+    A Endutek Mangueiras e Conexões é especializada no fornecimento de mangueiras e conexões desde 1994. Oferecemos uma linha diversificada de mangueiras hidráulicas e mangueiras industriais, além de conexões de diversos tipos.
 ---
 
 {% assign year = site.time | date: '%Y' %}
