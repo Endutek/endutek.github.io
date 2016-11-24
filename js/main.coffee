@@ -64,7 +64,7 @@ window.SlideShow = SlideShow
 slider = SlideShow
 	containerSelector: '.slideshow',
 	slideSelector: '.slide',
-	interval: 3000
+	interval: 4000
 
 slider.play()
 

@@ -7,20 +7,19 @@ layout: default
     <div class="slideshow" data-cell="2of3">
     {% for c in site.categorias %}{% capture c_name %}{% assign c_crumbs = c.url | split: '/' %}{{ c_crumbs[2] }}{% endcapture %}
       {% if site.data.features.categorias contains c_name %}
-        <article class="slide" data-grid="column justify">
-          <h4 class="slide-title"><a href="{{ site.base }}{{ c.url }}">{{ c.title }}</a></h4>
-          <p>{{ c.content | truncatewords: 20 }}</p>
+        <article class="slide" data-grid="column around">
+          <h4 class="slide-title" data-cell="shrink"><a href="{{ site.base }}{{ c.url }}">{{ c.title }}</a></h4>
+          <p class="slide-excerpt" data-cell="shrink">{{ c.excerpt | strip_html | truncatewords: 15 }}</p>
         </article>
       {% endif %}
     {% endfor %}
     </div>
     <div data-cell="1of3">
-      <h4>Catálogos:</h4>
+      <h4>Produtos</h4>
       {% for file in site.data.features.catalogos %}
-        <p><a href="{{ site.baseurl }}/downloads/{{ file.file }}" target="_blank" data-btn="100%">{{ file.title }}</a></p>
+        <p><a href="{{ site.baseurl }}/downloads/{{ file.file }}" target="_blank" data-btn="">&#11123; {{ file.title }}</a></p>
       {% endfor %}
-    
-      <p><a href="{{ site.baseurl }}/produtos/" data-btn="round brand 100%">Faça um orçamento</a></p>
+      <p><a href="{{ site.baseurl }}/produtos/" data-btn="brand 100%">EXPLORAR PRODUTOS</a></p>
     
     </div>
   </div>
