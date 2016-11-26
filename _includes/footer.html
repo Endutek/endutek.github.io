@@ -6,15 +6,18 @@
     <div data-cell="1of2">
     	<h2 class="footer-heading">{{ site.title }}</h2>
     	<p>{{ site.data.empresa.endereco }} - {{ site.data.empresa.cidade }}</p>
-    	<p>
-    	  {% for telefone in site.data.empresa.telefones %}
-    	    {{ telefone.title }}
-    	  {% endfor %}
-    	</p>
+      {% assign telefone = site.data.empresa.telefones[0] %}
+      <p data-grid="center spacing"><a data-cell="shrink" href="tel:{{ telefone.numero }}">{{ telefone.title }}</a> <a data-btn="round brand" href="#contato">Contato</a></p>
     </div>
 
     <div data-cell="1of2">
-    	<iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt-BR&amp;q=Av.+Dona+Ruyce+Ferraz+Alvim+-+Diadema+-+SP,+09961-540&amp;sll=-14.179186,-50.449219&amp;sspn=78.368572,158.027344&amp;ie=UTF8&amp;cd=1&amp;geocode=Fdhwlv4djNY4_Q&amp;split=0&amp;view=map&amp;ll=-23.694756,-46.605484&amp;spn=0.006877,0.008583&amp;z=16&amp;iwloc=A&amp;output=embed"></iframe>
+    	<ul class="post-list">
+        {% for my_page in site.pages %}
+          {% if my_page.menu-title %}
+          <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.menu-title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     </div>
 
   </div>
