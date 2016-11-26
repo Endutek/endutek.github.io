@@ -92,7 +92,7 @@ if tagsContainer && btnContainers
 		if formTags.length
 			tagsContainerLabel.innerHTML = 'Produtos: <a href="#tags">' + formTags.length + ' selecionados</a>'
 		else
-			tagsContainerLabel.innerHTML = 'Produtos: <a href="#tags">nenhum selecionados</a>'
+			tagsContainerLabel.innerHTML = 'Produtos: <a href="#tags">nenhum selecionado</a>'
 
 	saveTags = () ->
 		localStorage.setItem 'tags', formTags.join '\n'
