@@ -8,16 +8,18 @@ layout: default
 
 <div class="page-content">
 
+  <header class="wrapper post-header" data-grid="center spacing">
+    <div data-cell="2of3">
+      <h1 class="post-title">{{ page.title }}</h1>
+    </div>
+    {% if categoria != '' %}
+      <p class="add-button-container" data-cell="1of3"><button class="adicionar-produto icon" data-btn="round brand 100%">{% include svg/plus.svg %} Orçamento</button></p>
+    {% endif %}
+  </header>
+
   <div class="wrapper" data-grid="spacing">
 
     <article class="post" data-cell="2of3">
-
-      <header class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        {% if categoria != '' %}
-          <p><button class="adicionar-produto" data-btn="round brand">Adicionar ao orçamento</button></p>
-        {% endif %}
-      </header>
 
       <div class="post-content">
 
@@ -30,20 +32,26 @@ layout: default
         {{ content }}
 
         {% if categoria != '' %}
-          <div class="page-content"><p><button class="adicionar-produto" data-btn="round brand">Adicionar ao orçamento</button></p></div>
+          <div class="page-content add-button-container"><p><button class="adicionar-produto icon" data-btn="round brand">{% include svg/plus.svg %} Adicionar ao orçamento</button></p></div>
         {% endif %}
 
         <aside data-grid="spacing">
           <div data-cell="1of2">
-            <ul>
+            {% assign has_subitems = false %}
+            {% capture related %}
             {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
               {% if p_categoria == categoria %}
-                <li class="produtos-subitem">
+                {% assign has_subitems = true %}
+                <p>
                   <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
-                </li>
+                </p>
               {% endif %}
             {% endfor %}
-            </ul>
+            {% endcapture %}
+            {% if has_subitems %}
+              <h4>Produtos relacionados</h4>
+              {{ related }}
+            {% endif %}
           </div>
           <div data-cell="1of2">
             <h4>Catálogos</h4>
@@ -61,7 +69,19 @@ layout: default
           <p><label for="nome">Nome</label><input type="text" name="nome" placeholder="Nome completo" required></p>
           <p><label for="email">E-mail</label><input type="email" name="email" placeholder="email@dominio.com" required></p>
           <p><label for="telefone">Telefone</label><input type="tel" name="telefone" placeholder="(00) 9 0000 0000" required></p>
-          <p><label for="produtos">Produtos</label><input type="text" name="produtos" placeholder="" required></p>
+          <div class="tags-container">
+            <label for="produtos">Produtos</label>
+            {% for categoria in site.categorias %}
+            <p><label class="tag" data-checkable data-block="100%"><input type="checkbox" name="produtos" value="{{ categoria.url }}"> {{ categoria.title }}</label></p>
+            <div data-grid="small-spacing wrap">
+              {% for produto in site.produtos %}
+                {% if produto.url contains categoria.url %}
+                  <label class="tag" data-checkable><input type="checkbox" name="produtos" value="{{ produto.url }}"> {{ produto.title }}</label>
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
           <p><label for="mensagem">Mensagem</label><textarea name="mensagem" cols="30" rows="5"></textarea></p>
           <p><button>Solicitar orçamento</button></p>
         </form>

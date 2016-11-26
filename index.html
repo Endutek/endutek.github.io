@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section class="page-content gallery">
+<section class="page-content section-gallery">
   <div class="wrapper" data-grid="spacing">
     <div class="slideshow" data-cell="2of3">
     {% for c in site.categorias %}{% capture c_name %}{% assign c_crumbs = c.url | split: '/' %}{{ c_crumbs[2] }}{% endcapture %}
@@ -14,20 +14,21 @@ layout: default
       {% endif %}
     {% endfor %}
     </div>
-    <div data-cell="1of3">
-      <h4>Produtos</h4>
-      {% for file in site.data.features.catalogos %}
-        <p><a href="{{ site.baseurl }}/downloads/{{ file.file }}" target="_blank" data-btn="">&#11123; {{ file.title }}</a></p>
-      {% endfor %}
-      <p><a href="{{ site.baseurl }}/produtos/" data-btn="brand 100%">EXPLORAR PRODUTOS</a></p>
-    
+    <div data-cell="1of3" data-grid="column justify">
+      <section data-cell="shrink">
+        <h4>Baixe os catálogos:</h4>
+        {% for file in site.data.features.catalogos %}
+          <p><a href="{{ site.baseurl }}/downloads/{{ file.file }}" target="_blank" data-btn class="icon">{% include svg/down-arrow.svg %} {{ file.title }}</a></p>
+        {% endfor %}
+      </section>
+      <section data-cell="shrink"><a href="{{ site.baseurl }}/produtos/" data-btn="brand 100% cta">EXPLORE OS PRODUTOS</a></section>
     </div>
   </div>
 </section>
 
-<section class="page-content hero">
+<section class="page-content section-about hero">
   <div class="wrapper" data-grid="center spacing">
-    <div data-cell="1of3"><img src="/img/mapa-do-Brasil.svg" alt="Mapa do Brasil"></div>
+    <div class="svg-container" data-cell="1of3">{% include svg/mapa-do-Brasil.svg %}</div>
     <div data-cell="2of3">
       <h2>Atendemos todo o Brasil!</h2>
       <p>{{ site.description }}</p>
@@ -52,7 +53,7 @@ layout: default
 </section>
 
 <section class="page-content section-features" data-grid="spacing" data-text="center">
-{% assign features = "/sobre/ /produtos/ /aplicacoes/" | split: " " %}
+  {% assign features = "/sobre/ /produtos/ /aplicacoes/" | split: " " %}
   {% for link in features %}
   
     {% for p in site.pages %}
@@ -60,7 +61,7 @@ layout: default
         <div data-cell="1of3" data-grid="column justify">
           <h3>{{ p.title }}</h3>
           <p>{{ p.excerpt }}</p>
-          <p data-cell="shrink"><a href="{{ p.url | prepend: site.baseurl }}" data-btn="round{% if link == '/produtos/' %} brand{% endif %}">{{ p.menu-title }}</a></p>
+          <p data-cell="shrink"><a href="{{ p.url | prepend: site.baseurl }}" data-btn="round brand">{{ p.menu-title }}</a></p>
         </div>
       {% endif %}
     {% endfor %}

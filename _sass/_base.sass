@@ -101,12 +101,31 @@ pre
 .icon
     > svg
         display: inline-block
-        width: 16px
-        height: 16px
-        vertical-align: middle
+        vertical-align: sub
+        width: 20px
+        height: 20px
         color: inherit
         path, rect, polygon
             fill: currentcolor
+
+.svg-container
+    svg
+        max-width: 100%
+        height: auto
+
+.add-button-container
+    display: none
+    &.visible
+        display: block
+        animation: zoom-in .5s ease-in-out
+
+@keyframes zoom-in
+    0%
+        opacity: 0
+        transform: scale(0)
+    100%
+        opacity: 1
+        transform: scale(1)
 
 +module(text)
     +variant(center)
@@ -130,10 +149,16 @@ pre
         box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba($grey-color, .5)
     +variant(100%)
         width: 100%
+    +variant(cta)
+        letter-spacing: 2px
     +variant(brand)
         background-color: $brand-color
         &:hover, &:focus
             box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba($brand-color, .5)
+    +variant(vermelho)
+        background-color: $vermelho
+        &:hover, &:focus
+            box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba($vermelho, .5)
     +variant(round)
         border-radius: 500px
 

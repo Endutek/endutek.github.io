@@ -15,6 +15,7 @@ SlideShow = (config) ->
 	return new SlideShow(config) if !( this instanceof SlideShow )
 	this.config = config
 	this.container = $( this.config.containerSelector )[0]
+	return false if not this.container
 	this.slides = _ this.container.querySelectorAll this.config.slideSelector
 	this.index = 0
 
@@ -66,11 +67,62 @@ slider = SlideShow
 	slideSelector: '.slide',
 	interval: 4000
 
-slider.play()
-
-slider.container.addEventListener 'mouseover', () ->
-	slider.pause()
-slider.container.addEventListener 'mouseout', () ->
+if slider.container
 	slider.play()
 
-window.slider = slider
+	slider.container.addEventListener 'mouseover', () ->
+		slider.pause()
+	slider.container.addEventListener 'mouseout', () ->
+		slider.play()
+
+	window.slider = slider
+
+
+
+btnContainers = _ $( '.add-button-container' )
+tagsContainer = $( '.tags-container' )[0]
+if tagsContainer && btnContainers
+	tagInputs = _ tagsContainer.querySelectorAll '.tag input[type="checkbox"]'
+	formTags = if localStorage.getItem('tags') then localStorage.getItem('tags').split '\n' else []
+
+	updateFormTags = () ->
+		tagInputs.forEach (input) ->
+			input.checked = formTags.indexOf(input.value) >= 0
+
+	saveTags = () ->
+		localStorage.setItem 'tags', formTags.join '\n'
+
+	addTag = (thisTag) ->
+		return if formTags.indexOf(thisTag) >= 0
+		formTags.push thisTag
+		saveTags()
+
+	removeTag = (thisTag) ->
+		index = formTags.indexOf(thisTag)
+		if index >= 0
+			formTags.splice(index, 1)
+			saveTags()
+
+	scrollToForm = () ->
+		# scrollToY(scrollTargetY, speed, easing, fn)
+	  # scrollTargetY: the target scrollY property of the window
+	  # speed: time in pixels per second
+	  # easing: easing equation to use
+	  scrollTarget = $('.form-orcamento')[0].offsetTop
+	  scrollToY scrollTarget - 20, 500, 'easeInOutQuint', () -> false
+
+	btnContainers.forEach (item) ->
+		item.classList.add 'visible'
+		btn = item.querySelector('button.adicionar-produto')
+		btn.addEventListener 'click', (e) ->
+			addTag(location.pathname)
+			updateFormTags()
+			scrollToForm()
+
+	updateFormTags()
+	tagInputs.forEach (tag) ->
+		tag.addEventListener 'change', (e) ->
+			if tag.checked
+				addTag tag.value
+			else
+				removeTag tag.value

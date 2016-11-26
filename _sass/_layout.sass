@@ -43,6 +43,7 @@
         position: absolute
         top: 10px
         right: 10px
+        z-index: 999
         border-radius: 5px
         border: 1px solid transparent
         text-align: right
@@ -50,15 +51,15 @@
         .menu-icon
             display: block
             float: right
-            width: 36px
-            height: 36px
+            width: 40px
+            height: 40px
             line-height: 0
             padding-top: 10px
             text-align: center
 
             > svg
-                width: 18px
-                height: 15px
+                width: 25px
+                height: 25px
 
                 path
                     fill: $grey-color-dark
@@ -70,6 +71,7 @@
         &:hover
             background-color: $background-color
             border: 1px solid $grey-color-light
+            box-shadow: -5px 5px 5px -3px rgba($grey-color, .5)
 
             .trigger
                 display: block
@@ -92,12 +94,22 @@
 .page-content
     padding: $spacing-unit 0
 
-    &.hero
-        background-color: $brand-color
-        color: #fff
+.hero
+    background-color: $brand-color
+    color: #fff
+    a
+        color: #0ff
+    [data-btn]
+        background-color: transparent
+        color: #0ff
+        border: 1px solid #0ff
+        &:hover, &:focus
+            box-shadow: none
+            background-color: #0ff
+            color: $brand-color
 
-        a
-            color: #ff0
+.brushed_alu
+    background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/brushed_alu.png)
 
 .post-list
     margin: 0
@@ -131,9 +143,6 @@
 .post-content
     margin-bottom: $spacing-unit
 
-.gallery
-    overflow: hidden
-    background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/brushed_alu.png)
 .slideshow
     position: relative
     height: 260px
@@ -144,7 +153,7 @@
         left: 0
         right: 0
         height: 260px
-        z-index: -999
+        z-index: -99
         transition: .5s ease-in-out
         opacity: 0
         transform: scale(0)
@@ -164,7 +173,19 @@
             opacity: 1
             transition-delay: .3s
             transform: scale(1)
-            z-index: 999
+            z-index: 99
+
+
+.section-gallery
+    overflow: hidden
+    background:
+        image: url('/img/bg-hero.jpg')
+        position: center
+        size: cover
+
+
+.section-about
+
 
 .section-features
     padding-left: $spacing-unit
@@ -184,17 +205,16 @@
 
 .lista-header
     margin-bottom: $spacing-unit / 2
-    border-bottom: 1px solid $grey-color
 
 .produtos-item
-    margin-bottom: $spacing-unit / 4
-
+    border-top: 1px dotted $brand-color
     a
         display: block
         padding: 0.5em 0
+        font-family: $title-font-family
 
     > a
-        font-size: 20px
+        font-size: 18px
 
     .produtos-subitem
         transform-origin: top left
@@ -208,15 +228,20 @@
 
     &.selected
         position: relative
-        left: -10px
         padding: $spacing-unit / 4
         margin-left: -$spacing-unit / 4
         margin-right: -$spacing-unit / 4
-        background-color: $grey-color
-        color: #fff
-
-        a
-            color: inherit
+        background-color: rgba($brand-color, .07)
+        &, & + .produtos-item
+            border: none
+        &:before
+            position: absolute
+            top: 0
+            bottom: 0
+            left: -$spacing-unit / 4
+            content: ''
+            display: block
+            border-left: $spacing-unit / 4 solid rgba($brand-color, .4)
 
     &.selected, &:hover
         .produtos-subitem

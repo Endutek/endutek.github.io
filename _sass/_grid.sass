@@ -51,6 +51,14 @@
             > *
                 margin-bottom: $spacing-unit / 2
 
+    +variant(small-spacing)
+        +media-greater($on-palm)
+            > :not(:last-child)
+                margin-right: $spacing-unit / 4
+        +media-query($on-palm)
+            > *
+                margin-bottom: $spacing-unit / 4
+
     +module(cell)
 
         +variant(1of2)
