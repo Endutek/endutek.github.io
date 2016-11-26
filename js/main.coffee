@@ -82,15 +82,21 @@ if slider.container
 btnContainers = _ $( '.add-button-container' )
 tagsContainer = $( '.tags-container' )[0]
 if tagsContainer && btnContainers
+	tagsContainerLabel = tagsContainer.querySelector '.tags-container-label'
 	tagInputs = _ tagsContainer.querySelectorAll '.tag input[type="checkbox"]'
 	formTags = if localStorage.getItem('tags') then localStorage.getItem('tags').split '\n' else []
 
 	updateFormTags = () ->
 		tagInputs.forEach (input) ->
 			input.checked = formTags.indexOf(input.value) >= 0
+		if formTags.length
+			tagsContainerLabel.innerHTML = 'Produtos: <a href="#tags">' + formTags.length + ' selecionados</a>'
+		else
+			tagsContainerLabel.innerHTML = 'Produtos: <a href="#tags">nenhum selecionados</a>'
 
 	saveTags = () ->
 		localStorage.setItem 'tags', formTags.join '\n'
+		updateFormTags()
 
 	addTag = (thisTag) ->
 		return if formTags.indexOf(thisTag) >= 0
@@ -116,7 +122,6 @@ if tagsContainer && btnContainers
 		btn = item.querySelector('button.adicionar-produto')
 		btn.addEventListener 'click', (e) ->
 			addTag(location.pathname)
-			updateFormTags()
 			scrollToForm()
 
 	updateFormTags()
@@ -126,3 +131,11 @@ if tagsContainer && btnContainers
 				addTag tag.value
 			else
 				removeTag tag.value
+
+	tagsContainerLabel.classList.add 'select-style'
+	tagsContainer.classList.add 'closed'
+	tagsContainerLabel.addEventListener 'click', () ->
+		if !(tagsContainer.classList.contains 'closed')
+			tagsContainer.classList.add 'closed'
+		else
+			tagsContainer.classList.remove 'closed'

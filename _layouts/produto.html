@@ -70,16 +70,18 @@ layout: default
           <p><label for="email">E-mail</label><input type="email" name="email" placeholder="email@dominio.com" required></p>
           <p><label for="telefone">Telefone</label><input type="tel" name="telefone" placeholder="(00) 9 0000 0000" required></p>
           <div class="tags-container">
-            <label for="produtos">Produtos</label>
+            <label class="tags-container-label" for="produtos" data-block="100%">Produtos</label>
             {% for categoria in site.categorias %}
-            <p><label class="tag" data-checkable data-block="100%"><input type="checkbox" name="produtos" value="{{ categoria.url }}"> {{ categoria.title }}</label></p>
-            <div data-grid="small-spacing wrap">
-              {% for produto in site.produtos %}
-                {% if produto.url contains categoria.url %}
-                  <label class="tag" data-checkable><input type="checkbox" name="produtos" value="{{ produto.url }}"> {{ produto.title }}</label>
-                {% endif %}
-              {% endfor %}
-            </div>
+            <section class="tag-categoria">
+              <label class="tag tag-categoria-title" data-checkable data-block="100%"><input type="checkbox" name="produtos" value="{{ categoria.url }}"> {{ categoria.title }}</label>
+              <div class="tag-subitems" data-grid="small-spacing wrap">
+                {% for produto in site.produtos %}
+                  {% if produto.url contains categoria.url %}
+                    <label class="tag" data-checkable><input type="checkbox" name="produtos" value="{{ produto.url }}"> {{ produto.title }}</label>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </section>
             {% endfor %}
           </div>
           <p><label for="mensagem">Mensagem</label><textarea name="mensagem" cols="30" rows="5"></textarea></p>
