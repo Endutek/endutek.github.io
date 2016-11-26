@@ -15,4 +15,13 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" href="/favicon.png">
 
+  {% if page.sass %}
+    {% capture sass %}
+      {{ page.sass | sassify }}
+    {% endcapture %}
+  {% endif %}
+  {% if sass %}<style type="text/css">
+    {{ sass }}
+  </style>{% endif %}
+
 </head>
