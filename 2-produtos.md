@@ -7,9 +7,6 @@ excerpt: >
     A Endutek fornece todos os itens necessários à produtos de montagem e manutenção industrial. Veja detalhes dos tipos de mangueiras, conexões, tubos, entre outros produtos de manutenção industrial.
 ---
 
-A Endutek fornece todos os itens necessários à produtos de montagem e manutenção industrial. Veja detalhes dos tipos de mangueiras, conexões, tubos, entre outros produtos de manutenção industrial.
+A Endutek fornece todos os itens necessários para montagem e manutenção industrial. Veja detalhes dos tipos de mangueiras, conexões, tubos, entre outros produtos de manutenção industrial.
 
-## Mangueiras
-
-Confira nossa linha completa de mangueiras. Atendemos todo o Brasil e temos todas as linhas de mangueiras disponíveis para pronta entrega.
-
+<p class="only-mobile" data-grid="end"><a href="#lista-produtos" data-btn="round brand" onclick="scrollToTarget('.lista-produtos');">Conheça toda a linha...</a></p>
