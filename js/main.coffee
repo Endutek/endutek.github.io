@@ -61,6 +61,11 @@ SlideShow.prototype =
 
 window.SlideShow = SlideShow
 
+scrollToTarget = (target) ->
+	scrollTarget = $(target)[0].offsetTop
+	scrollToY scrollTarget - 20, 500, 'easeInOutQuint', () -> false
+
+window.scrollToTarget = scrollToTarget
 
 slider = SlideShow
 	containerSelector: '.slideshow',
@@ -109,20 +114,12 @@ if tagsContainer && btnContainers
 			formTags.splice(index, 1)
 			saveTags()
 
-	scrollToForm = () ->
-		# scrollToY(scrollTargetY, speed, easing, fn)
-	  # scrollTargetY: the target scrollY property of the window
-	  # speed: time in pixels per second
-	  # easing: easing equation to use
-	  scrollTarget = $('.form-orcamento')[0].offsetTop
-	  scrollToY scrollTarget - 20, 500, 'easeInOutQuint', () -> false
-
 	btnContainers.forEach (item) ->
 		item.classList.add 'visible'
 		btn = item.querySelector('button.adicionar-produto')
 		btn.addEventListener 'click', (e) ->
 			addTag(location.pathname)
-			scrollToForm()
+			scrollToTarget '.form-orcamento'
 
 	updateFormTags()
 	tagInputs.forEach (tag) ->

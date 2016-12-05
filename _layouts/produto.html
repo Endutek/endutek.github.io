@@ -74,7 +74,7 @@ layout: default
             {% for categoria in site.categorias %}
             <section class="tag-categoria">
               <label class="tag tag-categoria-title" data-checkable data-block="100%"><input type="checkbox" name="produtos" value="{{ categoria.url }}"> {{ categoria.title }}</label>
-              <div class="tag-subitems" data-grid="wrap">
+              <div class="tag-subitems" data-grid="row wrap">
                 {% for produto in site.produtos %}
                   {% if produto.url contains categoria.url %}
                     <label class="tag" data-checkable><input type="checkbox" name="produtos" value="{{ produto.url }}"> {{ produto.title }}</label>
