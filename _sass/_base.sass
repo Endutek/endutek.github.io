@@ -16,7 +16,7 @@ body
     *
         box-sizing: inherit
 
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, %vertical-rhythm
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, table, %vertical-rhythm
     margin-top: $spacing-unit / 4
     margin-bottom: $spacing-unit / 4
 
@@ -32,6 +32,29 @@ figcaption
 
 ul, ol
     margin-left: $spacing-unit / 4
+
+table
+    table-layout: fixed
+    width: 100%
+    border-collapse: collapse
+    border-spacing: 0
+    border: none
+    border: 1px solid #fff
+    caption
+        font-weight: bold
+        font-family: $title-font-family
+        color: $grey-color
+    th, td
+        padding: 5px 10px
+        border: 1px solid #fff
+    th
+        background-color: $grey-color-dark
+        color: #fff
+        font-weight: bold
+    tbody
+        tr
+            &:nth-of-type(odd)
+                background-color: $grey-color-light
 
 h1, h2, h3, h4, h5, h6
     font:
