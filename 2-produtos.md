@@ -58,13 +58,13 @@ A Endutek fornece todos os itens necessários para montagem e manutenção indus
   <h2>Mangueiras</h2>
   <div data-grid>
     <div class="produto-relacionado">
-      <a href="/produtos/mangueiras/mangueiras-espiraladas/">
+      <a href="/produtos/mangueiras-espiraladas/">
         <img src="/img/destaques/mangueiras-espiraladas.jpg" alt="Mangueiras Espiraladas">
         <div>Mangueiras Espiraladas</div>
       </a>
     </div>
     <div class="produto-relacionado">
-      <a href="/produtos/mangueiras/mangueiras-industriais/">
+      <a href="/produtos/mangueiras-industriais/">
         <img src="/img/destaques/mangueiras-industriais.jpg" alt="Mangueiras Industriais">
         <div>Mangueiras Industriais</div>
       </a>
