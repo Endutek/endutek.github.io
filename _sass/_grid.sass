@@ -54,6 +54,14 @@
     +variant(small-spacing)
         +media-greater($on-palm)
             > :not(:last-child)
+                margin-right: 10px
+        +media-query($on-palm)
+            > *
+                margin-bottom: 10px
+
+    +variant(small-spacing)
+        +media-greater($on-palm)
+            > :not(:last-child)
                 margin-right: $spacing-unit / 4
         +media-query($on-palm)
             > *

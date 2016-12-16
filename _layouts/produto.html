@@ -6,16 +6,18 @@ layout: default
 {% capture subcategoria %}{% assign page_crumbs = page.url | split: '/' %}{{ page_crumbs[3] }}{% endcapture %}
 {% capture page_img %}{{ '/img/produtos/' | prepend: site.baseurl }}{{ categoria }}{% if subcategoria != '' %}{{ subcategoria | prepend: '/' }}{% endif %}{{ '.jpg' }}{% endcapture %}
 
-<div class="page-content">
-
-  <header class="wrapper post-header" data-grid="center spacing">
+<header class="hero produto-header">
+  <div class="wrapper" data-grid="center spacing">
     <div data-cell="2of3">
       <h1 class="post-title">{{ page.title }}</h1>
     </div>
-    {% if categoria != '' %}
-      <p class="add-button-container" data-cell="1of3"><button class="adicionar-produto icon" data-btn="round brand 100%">{% include svg/plus.svg %} Orçamento</button></p>
-    {% endif %}
-  </header>
+      {% if categoria != '' %}
+        <p class="add-button-container" data-cell="1of3"><button class="adicionar-produto icon" data-btn="round brand 100%">{% include svg/plus.svg %} Orçamento</button></p>
+      {% endif %}
+    </div>
+</header>
+
+<div class="page-content">
 
   <div class="wrapper" data-grid="spacing">
 
@@ -32,33 +34,42 @@ layout: default
         {{ content }}
 
         {% if categoria != '' %}
-          <div class="page-content add-button-container"><p><button class="adicionar-produto icon" data-btn="round brand">{% include svg/plus.svg %} Adicionar ao orçamento</button></p></div>
+          <div class="add-button-container"><p><button class="adicionar-produto icon" data-btn="round brand 100%">{% include svg/plus.svg %} Orçamento</button></p></div>
         {% endif %}
 
-        <aside data-grid="spacing">
-          <div data-cell="1of2">
-            {% assign has_subitems = false %}
-            {% capture related %}
-            {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
-              {% if p_categoria == categoria %}
-                {% assign has_subitems = true %}
-                <p>
+        <aside>
+          {% assign has_subitems = false %}
+          {% capture related %}
+          {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
+            {% if p_categoria == categoria %}
+              {% assign has_subitems = true %}
+              <div data-grid="column justify" class="produto-relacionado">
+                <div class="produto-thumb" data-grid="center">
+                  {% include img_from_url.html
+                    src = p.url
+                    alt = p.title
+                    format = 'jpg'
+                  %}
+                </div>
+                <div data-cell="shrink">
                   <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
-                </p>
-              {% endif %}
-            {% endfor %}
-            {% endcapture %}
-            {% if has_subitems %}
-              <h4>Produtos relacionados</h4>
-              {{ related }}
+                </div>
+              </div>
             {% endif %}
-          </div>
-          <div data-cell="1of2">
-            <h4>Catálogos</h4>
-            {% for download in site.data.features.catalogos %}
-              <p><a href="{{ site.baseurl }}/downloads/{{ download.file }}" target="_blank" data-btn="100%">{{ download.title }}</a></p>
-            {% endfor %}
-          </div>
+          {% endfor %}
+          {% endcapture %}
+          {% if has_subitems %}
+            <nav>
+              <h4>Produtos relacionados</h4>
+              <div data-grid="wrap">{{ related }}</div>
+            </nav>
+          {% endif %}
+
+          <h4>Catálogos</h4>
+          {% for download in site.data.features.catalogos %}
+            <p><a href="{{ site.baseurl }}/downloads/{{ download.file }}" target="_blank" data-btn="100%">{{ download.title }}</a></p>
+          {% endfor %}
+
         </aside>
 
       </div>
