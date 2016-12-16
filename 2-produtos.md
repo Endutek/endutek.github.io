@@ -9,66 +9,78 @@ destaques:
   - 
     img: abracadeiras.jpg
     title: Abraçadeiras
-    link: _categorias/abracadeiras.md
+    link: /produtos/abracadeiras/
   - 
     img: borrachas.jpg
     title: Borrachas
-    link: _categorias/lencois-de-borracha.md
+    link: /produtos/lencois-de-borracha/
   -
     img: conexoes-galvanizadas.jpg
     title: Conexões Galvanizadas
-    link: _produtos/conexoes/conexoes-galvanizadas.md
+    link: /produtos/conexoes/conexoes-galvanizadas/
   -
     img: conexoes-hidraulicas.jpg
     title: Conexões Hidráulicas
-    link: _produtos/conexoes/conexoes-hidraulicas.md
+    link: /produtos/conexoes/conexoes-hidraulicas/
   -
     img: conexoes-pneumaticas.jpg
     title: Conexões Pneumáticas
-    link: _produtos/conexoes/conexoes-pneumaticas.md
+    link: /produtos/conexoes/conexoes-pneumaticas/
   -
     img: correias.jpg
     title: Correias
-    link: _categorias/correias-e-polias.md
+    link: /produtos/correias-e-polias/
   -
     img: engates-rapidos.jpg
     title: Engates
-    link: _categorias/engates-rapidos.md
+    link: /produtos/engates-rapidos/
   -
     img: flexiveis-metalicos.jpg
     title: Flexíveis Metálicos
-    link: _categorias/flexiveis-metalicos.md
+    link: /produtos/flexiveis-metalicos/
   -
     img: lubrificacao.jpg
     title: Lubrificação
-    link: _categorias/lubrificantes-industriais.md
+    link: /produtos/lubrificantes-industriais/
   -
     img: rodizios.jpg
     title: Rodízios
-    link: _categorias/rodizios-e-rodas.md
+    link: /produtos/rodizios-e-rodas/
   -
     img: valvula-de-esfera.jpg
     title: Válvulas
-    link: _categorias/valvula-de-esfera.md
-sass: >
-
+    link: /produtos/valvula-de-esfera/
 ---
 
-
-
 A Endutek fornece todos os itens necessários para montagem e manutenção industrial. Veja detalhes dos tipos de mangueiras, conexões, tubos, entre outros produtos de manutenção industrial.
+
+<div class="destaque-mangueiras">
+  <h2>Mangueiras</h2>
+  <div data-grid>
+    <div class="produto-relacionado">
+      <a href="/produtos/mangueiras/mangueiras-espiraladas/">
+        <img src="/img/destaques/mangueiras-espiraladas.jpg" alt="Mangueiras Espiraladas">
+        <div>Mangueiras Espiraladas</div>
+      </a>
+    </div>
+    <div class="produto-relacionado">
+      <a href="/produtos/mangueiras/mangueiras-industriais/">
+        <img src="/img/destaques/mangueiras-industriais.jpg" alt="Mangueiras Industriais">
+        <div>Mangueiras Industriais</div>
+      </a>
+    </div>
+  </div>
+</div>
 
 ## Destaques
 
 <div data-grid="wrap">
   {% for p in page.destaques %}
-    <div data-grid="column justify" class="produto-relacionado">
-      <div class="produto-thumb" data-grid="center">
+    <div class="produto-relacionado" data-grid="center">
+      <a href="{{ site.baseurl }}{{ p.link }}" class="produto-thumb">
         <img src="{{ img_src = site.baseurl | append: '/img/destaques/' | append: p.img }}" alt="{{ p.title }}">
-      </div>
-      <div data-cell="shrink">
-        <a href="{{ link p.link }}">{{ p.title }}</a>
-      </div>
+        <div>{{ p.title }}</div>
+      </a>
     </div>
   {% endfor %}
 </div>

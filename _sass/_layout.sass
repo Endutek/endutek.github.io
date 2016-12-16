@@ -133,11 +133,12 @@
         size: cover
 
 .produto-relacionado
-    width: 140px
     text-align: center
     background-color: #fff
     padding: 5px
     border: 1px solid $grey-color-light
+    +media-greater($on-palm)
+        width: 140px
     img
         display: block
         margin: auto
