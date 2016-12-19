@@ -1,6 +1,8 @@
 ---
 title: Características de terminais
 categories: informacoes-tecnicas
+excerpt: >
+    Os terminais podem ser de diferentes modelos, conforme a sua instalação, formato e função. Veja estas e outras características dos terminais de mangueiras.
 ---
 
 ## Modelos
