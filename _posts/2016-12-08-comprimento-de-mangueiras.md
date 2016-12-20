@@ -1,5 +1,6 @@
 ---
 title: Comprimento de Mangueiras
+categories: informacoes-tecnicas
 ---
 
 O comprimento de qualquer mangueira hidráulica ERMETO é a distância entre as extremidades da mesma, incluindo os seus respectivos terminais (quando existirem) conforme mosta a figura:

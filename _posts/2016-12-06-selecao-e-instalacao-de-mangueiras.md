@@ -1,5 +1,6 @@
 ---
 title: Seleção e instalação de mangueiras
+categories: informacoes-tecnicas
 ---
 
 A correta instalação da mangueira é essencial para um desempenho satisfatório. Se o comprimento é excessivo, a aparência da instalação não será o único problema. Se a montagem da mangueira for curta para permitir flexibilidade e mudança de comprimento durante a expansão ou contração, a vida útil de trabalho da mangueira será reduzida.
