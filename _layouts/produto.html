@@ -75,7 +75,7 @@ layout: default
       </div>
 
       <footer class="form-orcamento">
-        <form action="" method="post">
+        <form action="/enviar_email.php" method="post">
           <h4>Orçamento</h4>
           <p><label for="nome">Nome</label><input type="text" name="nome" placeholder="Nome completo" required></p>
           <p><label for="email">E-mail</label><input type="email" name="email" placeholder="email@dominio.com" required></p>
@@ -95,6 +95,7 @@ layout: default
             </section>
             {% endfor %}
           </div>
+          <p class="honeypot"><label for="honey">Se estiver vendo isto, deixe este campo em branco</label><input type="text" name="hone"></p>
           <p><label for="mensagem">Mensagem</label><textarea name="mensagem" cols="30" rows="5"></textarea></p>
           <p><button>Solicitar orçamento</button></p>
         </form>
