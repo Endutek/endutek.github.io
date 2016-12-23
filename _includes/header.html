@@ -19,10 +19,11 @@
           <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.menu-title }}</a>
           {% endif %}
         {% endfor %}
-        <a class="page-link" href="http://blog.endutek.com.br">Blog</a>
+        <a class="page-link" href="http://blog.endutek.com.br" target="_blank">Blog</a>
+        <a class="page-link" href="{{ site.data.empresa.facebook }}" target="_blank">Facebook</a>
         <a class="page-link" href="#contato">Contato</a>
         {% assign telefone = site.data.empresa.telefones[0] %}
-        <a href="tel:{{ telefone.numero }}" class="page-link">{{ telefone.title }}</a>
+        <a class="page-link" href="tel:{{ telefone.numero }}">{{ telefone.title }}</a>
       </div>
     </nav>
 

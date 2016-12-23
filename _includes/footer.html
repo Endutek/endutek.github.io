@@ -3,21 +3,34 @@
 
   <div class="wrapper" data-grid="center spacing">
 
-    <div data-cell="1of2">
+    <div data-cell="2of3">
     	<h2 class="footer-heading">{{ site.title }}</h2>
     	<p>{{ site.data.empresa.endereco }} - {{ site.data.empresa.cidade }}</p>
-      {% assign telefone = site.data.empresa.telefones[0] %}
-      <p data-grid="center spacing"><a data-cell="shrink" href="tel:{{ telefone.numero }}">{{ telefone.title }}</a> <a data-btn="round brand" href="#contato">Contato</a></p>
+      <p><a data-btn="round brand" href="#contato">Contato</a></p>
     </div>
 
-    <div data-cell="1of2">
-    	<ul class="post-list">
-        {% for my_page in site.pages %}
-          {% if my_page.menu-title %}
-          <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.menu-title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+    <div data-cell="1of3" data-grid="spacing">
+
+      <div data-cell="1of2">
+        <ul class="post-list">
+          <li><a href="/">Início</a></li>
+          {% for my_page in site.pages %}
+            {% if my_page.menu-title %}
+            <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.menu-title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      
+      <div data-cell="1of2">
+        <ul class="post-list">
+          <li><a href="http://blog.endutek.com.br/" target="_blank">Blog</a></li>
+          <li><a href="{{ site.data.empresa.facebook }}" target="_blank">Facebook</a></li>
+          {% assign telefone = site.data.empresa.telefones[0] %}
+          <li><a href="tel:{{ telefone.numero }}">{{ telefone.title }}</a></li>
+        </ul>
+      </div>
+
     </div>
 
   </div>
