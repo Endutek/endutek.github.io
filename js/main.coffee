@@ -86,6 +86,7 @@ if slider.container
 
 btnContainers = _ $( '.add-button-container' )
 tagsContainer = $( '.tags-container' )[0]
+formOrcamento = $( '.form-orcamento form' )[0]
 if tagsContainer && btnContainers
 	tagsContainerLabel = tagsContainer.querySelector '.tags-container-label'
 	tagInputs = _ tagsContainer.querySelectorAll '.tag input[type="checkbox"]'
@@ -136,3 +137,6 @@ if tagsContainer && btnContainers
 			tagsContainer.classList.add 'closed'
 		else
 			tagsContainer.classList.remove 'closed'
+
+	formOrcamento.addEventListener 'submit', () ->
+		localStorage.clear()

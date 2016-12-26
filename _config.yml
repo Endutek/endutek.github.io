@@ -10,6 +10,11 @@ url: "http://endutek.com.br"
 # Build settings
 markdown: kramdown
 
+exclude:
+  - desktop.ini
+  - gulpfile.js
+  - README.md
+
 sass:
   style: compressed
 

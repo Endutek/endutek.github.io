@@ -20,11 +20,11 @@ destaques:
     link: /produtos/conexoes/conexoes-galvanizadas/
   -
     img: conexoes-hidraulicas.jpg
-    title: Conexões Hidráulicas
+    title: Conexões Hidráulicas Ermeto
     link: /produtos/conexoes/conexoes-hidraulicas/
   -
     img: conexoes-pneumaticas.jpg
-    title: Conexões Pneumáticas
+    title: Conexões Pneumáticas Festo
     link: /produtos/conexoes/conexoes-pneumaticas/
   -
     img: correias.jpg
@@ -65,8 +65,8 @@ A Endutek fornece todos os itens necessários para montagem e manutenção indus
     </div>
     <div class="produto-relacionado">
       <a href="/produtos/mangueiras-espiraladas/">
-        <img src="/img/destaques/mangueiras-espiraladas.jpg" alt="Mangueiras Espiraladas">
-        <div>Mangueiras Espiraladas</div>
+        <img src="/img/destaques/mangueiras-espiraladas.jpg" alt="Mangueiras Espiraladas Kanaflex">
+        <div>Mangueiras Espiraladas Kanaflex</div>
       </a>
     </div>
     <div class="produto-relacionado">
