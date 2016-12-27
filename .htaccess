@@ -29,3 +29,6 @@ RewriteRule ^mangueiras\.asp.* /produtos [R=301,L]
 
 RewriteEngine On
 RewriteRule ^vedacoes\.asp.* /produtos/lencois-de-borracha [R=301,L]
+
+RewriteEngine On
+RewriteRule ^colas-e-silicones\.asp.* /produtos/adesivos-colas-silicones [R=301,L]

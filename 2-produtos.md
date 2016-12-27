@@ -16,7 +16,7 @@ destaques:
     link: /produtos/lencois-de-borracha/
   -
     img: conexoes-galvanizadas.jpg
-    title: Conexões Galvanizadas
+    title: Conexões Galvanizadas Tupy
     link: /produtos/conexoes/conexoes-galvanizadas/
   -
     img: conexoes-hidraulicas.jpg
