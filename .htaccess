@@ -5,13 +5,22 @@ RewriteCond %{HTTP_HOST} ^www.endutek.com.br$ [NC]
 RewriteRule ^(.*)$ http://endutek.com.br/$1 [R=301,L]
 
 RewriteEngine On
-RewriteRule ^informacoes-tecnicas\.asp.* http://blog.endutek.com.br/ [R=301,L]
+RewriteRule ^informacoes-tecnicas(-detalhe)?\.asp.* http://blog.endutek.com.br/ [R=301,L]
 
 RewriteEngine On
-RewriteRule ^contato\.asp.* http://endutek.com.br/ [R=301,L]
+RewriteRule ^(contato)|(index)|(cadastro)|(fale)|(cad)\.asp.* http://endutek.com.br/ [R=301,L]
+
+RewriteEngine On
+RewriteRule ^m(obile)? http://endutek.com.br/ [R=301,L]
 
 RewriteEngine On
 RewriteRule ^(empresa|produtos|aplicacoes)\.asp.* http://endutek.com.br/$1 [R=301,L]
+
+RewriteEngine On
+RewriteRule ^sobre-a-endutek\.asp.* http://endutek.com.br/empresa [R=301,L]
+
+RewriteEngine On
+RewriteRule ^produto\.asp.* http://endutek.com.br/produtos [R=301,L]
 
 RewriteEngine On
 RewriteRule ^({% for app in site.aplicacoes %}{% assign crumbs = app.url | split: '/' %}{{ crumbs[2] }}{% if forloop.last != true %}|{% endif %}{% endfor %})\.asp.* http://endutek.com.br/aplicacoes/$1 [R=301,L]
@@ -32,3 +41,6 @@ RewriteRule ^vedacoes\.asp.* /produtos/lencois-de-borracha [R=301,L]
 
 RewriteEngine On
 RewriteRule ^colas-e-silicones\.asp.* /produtos/adesivos-colas-silicones [R=301,L]
+
+RewriteEngine On
+RewriteRule ^adesivos\.asp.* /produtos/adesivos-colas-silicones/colas/ [R=301,L]

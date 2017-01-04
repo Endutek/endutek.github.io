@@ -36,11 +36,7 @@ layout: default
         <div data-cell="2of3">
           <p>Entre em contato e tire dúvidas:</p>
           <ul>
-            {% for tel in site.data.empresa.telefones %}
-              <li><a href="tel:{{ tel.numero }}">{{ tel.title }}</a></li>
-            {% endfor %}
-            <li><a href="mailto:{{ site.data.empresa.emails[0].mailto }}">{{ site.data.empresa.emails[0].mailto }}</a></li>
-            <li><a href="#contato">Formulário de contato...</a></li>
+            <li><a href="#contato">Informações de contato...</a></li>
             <li><a href="{{ site.data.empresa.facebook }}" target="_blank">Siga nossa fan page</a></li>
           </ul>
         </div>
