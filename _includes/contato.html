@@ -2,9 +2,9 @@
 	<form action="/enviar_email.php" method="post" class="wrapper">
 		<h4>Fale conosco</h4>
 		<p data-grid="justify spacing wrap">
-			<small data-cell="shrink"><a href="mailto:{{ site.data.empresa.emails[0].mailto }}">{{ site.data.empresa.emails[0].mailto }}</a></small>
+			<small data-cell="shrink"><a href="mailto:{{ site.data.empresa.emails[0].mailto }}" onclick="ga('send', 'event', 'Contato', 'E-mail', 'Formulário de contato');">{{ site.data.empresa.emails[0].mailto }}</a></small>
 			{% for tel in site.data.empresa.telefones %}
-				<small data-cell="shrink"><a href="tel:{{ tel.numero }}">{{ tel.title }}</a></small>
+				<small data-cell="shrink"><a href="tel:{{ tel.numero }}" onclick="ga('send', 'event', 'Contato', '{{ tel.title }}', 'Formulário de contato');">{{ tel.title }}</a></small>
 			{% endfor %}
 		</p>
 		<p><label for="nome">Nome</label><input type="text" name="nome" placeholder="Nome Completo" required></p>

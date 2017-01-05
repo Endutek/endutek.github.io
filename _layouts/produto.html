@@ -12,7 +12,7 @@ layout: default
       <h1 class="post-title">{{ page.title }}</h1>
     </div>
       {% if categoria != '' %}
-        <p class="add-button-container" data-cell="1of3"><button class="adicionar-produto icon" data-btn="round brand 100%">{% include svg/plus.svg %} Orçamento</button></p>
+        <p class="add-button-container" data-cell="1of3"><button class="adicionar-produto icon" data-btn="round brand 100%" data-value="{{ page.title }}" onclick="ga('send', 'event', 'Adicionar ao orçamento', '{{ page.title }}', 'Cabeçalho');">{% include svg/plus.svg %} Orçamento</button></p>
       {% endif %}
     </div>
 </header>
@@ -34,7 +34,7 @@ layout: default
         {{ content }}
 
         {% if categoria != '' %}
-          <div class="add-button-container"><p><button class="adicionar-produto icon" data-btn="round brand 100%">{% include svg/plus.svg %} Orçamento</button></p></div>
+          <div class="add-button-container"><p><button class="adicionar-produto icon" data-btn="round brand 100%" data-value="{{ page.title }}" onclick="ga('send', 'event', 'Adicionar ao orçamento', '{{ page.title }}', 'Final do texto');">{% include svg/plus.svg %} Orçamento</button></p></div>
         {% endif %}
 
         <aside>
@@ -67,7 +67,7 @@ layout: default
 
           <h4>Catálogos</h4>
           {% for download in site.data.features.catalogos %}
-            <p><a href="{{ site.baseurl }}/downloads/{{ download.file }}" target="_blank" data-btn="100%">{{ download.title }}</a></p>
+            <p><a href="{{ site.baseurl }}/downloads/{{ download.file }}" target="_blank" data-btn="100%" onclick="ga('send', 'event', 'Download', '{{ download.title }}', '{{ page.title }}');">{{ download.title }}</a></p>
           {% endfor %}
 
         </aside>

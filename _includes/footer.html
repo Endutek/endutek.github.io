@@ -6,7 +6,7 @@
     <div data-cell="2of3">
     	<h2 class="footer-heading">{{ site.title }}</h2>
     	<p>{{ site.data.empresa.endereco }} - {{ site.data.empresa.cidade }}</p>
-      <p><a data-btn="round brand" href="#contato">Contato</a></p>
+      <p><a data-btn="round brand" href="#contato" onclick="ga('send', 'event', 'Contato', 'Abrir formulário', 'Rodapé');">Contato</a></p>
     </div>
 
     <div data-cell="1of3" data-grid="spacing">
@@ -23,10 +23,10 @@
       
       <div data-cell="1of2">
         <ul class="post-list">
-          <li><a href="http://blog.endutek.com.br/">Blog</a></li>
-          <li><a href="{{ site.data.empresa.facebook }}" target="_blank">Facebook</a></li>
+          <li><a href="http://blog.endutek.com.br/" onclick="ga('send', 'event', 'Navegar', 'Blog', 'Rodapé');">Blog</a></li>
+          <li><a href="{{ site.data.empresa.facebook }}" target="_blank" onclick="ga('send', 'event', 'Navegar', 'Facebook', 'Rodapé');">Facebook</a></li>
           {% assign telefone = site.data.empresa.telefones[0] %}
-          <li><a href="tel:{{ telefone.numero }}">{{ telefone.title }}</a></li>
+          <li><a href="tel:{{ telefone.numero }}" onclick="ga('send', 'event', 'Contato', '{{ telefone.title }}', 'Rodapé');">{{ telefone.title }}</a></li>
         </ul>
       </div>
 

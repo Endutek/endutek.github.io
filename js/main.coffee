@@ -119,7 +119,7 @@ if tagsContainer && btnContainers
 		item.classList.add 'visible'
 		btn = item.querySelector('button.adicionar-produto')
 		btn.addEventListener 'click', (e) ->
-			addTag(location.pathname)
+			addTag btn.getAttribute('data-value')
 			scrollToTarget '.form-orcamento'
 
 	updateFormTags()
