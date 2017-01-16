@@ -46,4 +46,4 @@ RewriteEngine On
 RewriteRule ^adesivos\.asp.* /produtos/adesivos-colas-silicones/colas/ [R=301,L]
 
 RewriteEngine On
-RewriteRule ^/produtos/mangueiras-industriais/mangueira-para-hidrante/* /produtos/mangueiras-industriais/mangueiras-para-hidrante-incendio/ [R=301,L]
+RewriteRule ^produtos/mangueiras-industriais/mangueira-para-hidrante* /produtos/mangueiras-industriais/mangueiras-para-hidrante-incendio/ [R=301,L]
