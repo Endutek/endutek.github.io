@@ -88,17 +88,26 @@ btnContainers = _ $( '.add-button-container' )
 tagsContainer = $( '.tags-container' )[0]
 formOrcamento = $( '.form-orcamento form' )[0]
 if tagsContainer && btnContainers
-	tagsContainerLabel = tagsContainer.querySelector '.tags-container-label'
+	tagsContainerLabel = $( '.tags-container-label' )[0]
+	tagCategorias = tagsContainer.querySelectorAll '.tag-categoria'
 	tagInputs = _ tagsContainer.querySelectorAll '.tag input[type="checkbox"]'
 	formTags = if localStorage.getItem('tags') then localStorage.getItem('tags').split '\n' else []
 
 	updateFormTags = () ->
 		tagInputs.forEach (input) ->
-			input.checked = formTags.indexOf(input.value) >= 0
+			isChecked = formTags.indexOf(input.value) >= 0
+			input.checked = isChecked
+			input.parentNode.classList.toggle 'off', not isChecked
+		tagCategorias.forEach (section) ->
+			isOn = section.querySelectorAll( 'input[type="checkbox"]:checked' ).length
+			if isOn
+				section.classList.remove 'off'
+			else
+				section.classList.add 'off'
 		if formTags.length
-			tagsContainerLabel.innerHTML = 'Produtos: <a href="#tags">' + formTags.length + ' selecionados</a>'
+			tagsContainerLabel.innerHTML = 'Produtos: <span class="count">' + formTags.length + ' selecionados</span>'
 		else
-			tagsContainerLabel.innerHTML = 'Produtos: <a href="#tags">nenhum selecionado</a>'
+			tagsContainerLabel.innerHTML = 'Produtos: <span class="count">nenhum selecionado</span>'
 
 	saveTags = () ->
 		localStorage.setItem 'tags', formTags.join '\n'
@@ -130,13 +139,6 @@ if tagsContainer && btnContainers
 			else
 				removeTag tag.value
 
-	tagsContainerLabel.classList.add 'select-style'
-	tagsContainer.classList.add 'closed'
-	tagsContainerLabel.addEventListener 'click', () ->
-		if !(tagsContainer.classList.contains 'closed')
-			tagsContainer.classList.add 'closed'
-		else
-			tagsContainer.classList.remove 'closed'
 
 	formOrcamento.addEventListener 'submit', () ->
 		localStorage.clear()
