@@ -13,10 +13,11 @@ excerpt: >
     <div data-cell="1of3"><img src="{{ site.baseurl }}/img/empresa/empresa (2).jpg" alt="Loja Endutek"></div>
     <div data-cell="2of3">
         <p>A Endutek Mangueiras e Conexões é especializada no fornecimento de mangueiras e conexões desde 1994. Há mais de {{ year | minus: 1995 }} anos fabricando e distribuindo mangueiras, conexões, tubos e materiais de borrachas e plásticos para manutenção e montagem industrial.</p>
+        <p><a href="#contato" data-cell="1of2" data-btn="round" onclick="ga('send', 'event', 'Contato', 'Abrir formulário', 'Empresa - início do texto');">Fale conosco</a></p>
     </div>
 </div>
 
-<div data-grid="center spacing" class="wrapper container hero">
+<div data-grid="center spacing" class="page-content wrapper container hero">
     <div data-cell="1of3">
         <p>Oferecemos uma linha diversificada de mangueiras hidráulicas e mangueiras industriais, além de conexões de diversos tipos:</p>
     </div>
@@ -38,15 +39,17 @@ excerpt: >
     <div data-cell="1of2">
         <p>Atendemos empresas dos setores metalúrgicos, auto-peças, siderúrgicos, plásticos, papeleiros, químicos, entre outros. Além da linha de mangueiras e conexões, dispomos de uma linha completa de correias industriais e sincronizadoras, plásticos industriais, abraçadeiras, adesivos anaeróbicos, válvulas e registros, engates rápidos, tubos, flexíveis metálicos, lubrificantes e equipamentos de segurança. Somos uma empresa de produtos para montagem e manutenção industrial.</p>
     </div>
-    
     <div data-cell="1of2">
         <p><strong>Estoque completo e profissionais qualificados:</strong> oferecemos agilidade e pronta entrega, além de uma parceria na manutenção e montagem dos nossos clientes.</p>
+        <p><a href="/produtos/" data-cell="1of2" data-btn="round brand">Conheça os produtos</a></p>
     </div>
 </div>
 
-<div data-grid="justify spacing">
+---
+
+<div data-grid="center justify spacing">
     <div data-cell="">
-        <h4>Parceiros</h4>
+        <h2>Parceiros</h2>
     </div>
     <div data-cell="shrink">
         <img src="{{ site.baseurl }}/img/logo-endutek.png" alt="parceiros">
@@ -72,7 +75,7 @@ excerpt: >
 
 Atendemos todo o Brasil e estamos em constante preocupação com melhorias internas e aperfeiçoamento dos processos de atendimento a clientes, entrega e fabricação dos nossos produtos. Estamos crescendo a cada ano e ampliando nossos negócios graças à nossa política de atendimento e relacionamento com o cliente, onde priorizamos a qualidade, honestidade, agilidade no atendimento e preços competitivos.
 
-<div data-grid="spacing">
-    <a href="#contato" data-cell="1of2" data-btn="round">Fale conosco</a>
+<div data-grid="spacing" class="page-content">
+    <a href="#contato" data-cell="1of2" data-btn="round" onclick="ga('send', 'event', 'Contato', 'Abrir formulário', 'Empresa - fim do texto');">Fale conosco</a>
     <a href="/produtos/" data-cell="1of2" data-btn="round brand">Conheça os produtos</a>
 </div>
