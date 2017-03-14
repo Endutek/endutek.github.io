@@ -12,7 +12,11 @@ layout: default
       <h1 class="post-title">{{ page.title }}</h1>
     </div>
       {% if categoria != '' %}
-        <p class="add-button-container" data-cell="1of3"><button class="adicionar-produto icon" data-btn="round brand 100%" data-value="{{ page.title }}" onclick="ga('send', 'event', 'Adicionar ao orçamento', '{{ page.title }}', 'Cabeçalho');">{% include svg/plus.svg %} Orçamento</button></p>
+        <div data-cell="1of3" data-text="center">
+          <p class="add-button-container"><button class="adicionar-produto icon" data-btn="round brand 100%" data-value="{{ page.title }}" onclick="ga('send', 'event', 'Adicionar ao orçamento', '{{ page.title }}', 'Cabeçalho');">Solicite seu orçamento</button></p>
+          <p><small>Clique para adicionar este produto e ir para o orçamento.</small></p>
+          <p><strong>Responderemos em até 24 horas.</strong></p>
+        </div>
       {% endif %}
     </div>
 </header>
@@ -33,9 +37,33 @@ layout: default
 
         {{ content }}
 
-        {% if categoria != '' %}
-          <div class="add-button-container"><p><button class="adicionar-produto icon" data-btn="round brand 100%" data-value="{{ page.title }}" onclick="ga('send', 'event', 'Adicionar ao orçamento', '{{ page.title }}', 'Final do texto');">{% include svg/plus.svg %} Orçamento</button></p></div>
-        {% endif %}
+        <footer class="form-orcamento">
+          <form action="/enviar_email.php" method="post">
+            <div data-grid="center spacing">
+              <h4 data-cell="3of4">Orçamento</h4>
+              <div data-cell="shrink"><img src="{{ site.baseurl }}/img/badge-24h.png" alt="Atendemos em até 24 horas"></div>
+            </div>
+            <p><label for="nome">Nome</label><input type="text" name="nome" placeholder="Nome completo" required></p>
+            <p><label for="email">E-mail</label><input type="email" name="email" placeholder="email@dominio.com" required></p>
+            <p><label for="telefone">Telefone</label><input type="tel" name="telefone" placeholder="(00) 9 0000 0000" required></p>
+            <label class="tags-container-label" for="produtos" data-block="100%">Produtos</label>
+            <div class="tags-container">
+              {% for categoria in site.categorias %}
+              <section class="tag-categoria" data-grid="row wrap">
+                <label class="tag tag-categoria-title" data-checkable data-block="100%"><input type="checkbox" name="produtos[]" value="{{ categoria.title }}"> {{ categoria.title }}</label>
+                {% for produto in site.produtos %}
+                  {% if produto.url contains categoria.url %}
+                    <label class="tag tag-subitem" data-checkable data-cell="shrink"><input type="checkbox" name="produtos[]" value="{{ produto.title }}"> {{ produto.title }}</label>
+                  {% endif %}
+                {% endfor %}
+              </section>
+              {% endfor %}
+            </div>
+            <p class="honeypot"><label for="honey">Se estiver vendo isto, deixe este campo em branco</label><input type="text" name="honey"></p>
+            <p><label for="mensagem">Mensagem</label><textarea name="mensagem" cols="30" rows="5"></textarea></p>
+            <p><button>Solicitar orçamento</button></p>
+          </form>
+        </footer>
 
         <aside>
           {% assign has_subitems = false %}
@@ -65,40 +93,10 @@ layout: default
             </nav>
           {% endif %}
 
-          <h4>Catálogos</h4>
-          {% for download in site.data.features.catalogos %}
-            <p><a href="{{ site.baseurl }}/downloads/{{ download.file }}" target="_blank" data-btn="100%" onclick="ga('send', 'event', 'Download', '{{ download.title }}', '{{ page.title }}');">{{ download.title }}</a></p>
-          {% endfor %}
-
         </aside>
 
       </div>
 
-      <footer class="form-orcamento">
-        <form action="/enviar_email.php" method="post">
-          <h4>Orçamento</h4>
-          <p><label for="nome">Nome</label><input type="text" name="nome" placeholder="Nome completo" required></p>
-          <p><label for="email">E-mail</label><input type="email" name="email" placeholder="email@dominio.com" required></p>
-          <p><label for="telefone">Telefone</label><input type="tel" name="telefone" placeholder="(00) 9 0000 0000" required></p>
-          <label class="tags-container-label" for="produtos" data-block="100%">Produtos</label>
-          <div class="tags-container">
-            {% for categoria in site.categorias %}
-            <section class="tag-categoria" data-grid="row wrap">
-              <label class="tag tag-categoria-title" data-checkable data-block="100%"><input type="checkbox" name="produtos[]" value="{{ categoria.title }}"> {{ categoria.title }}</label>
-              {% for produto in site.produtos %}
-                {% if produto.url contains categoria.url %}
-                  <label class="tag tag-subitem" data-checkable data-cell="shrink"><input type="checkbox" name="produtos[]" value="{{ produto.title }}"> {{ produto.title }}</label>
-                {% endif %}
-              {% endfor %}
-            </section>
-            {% endfor %}
-          </div>
-          <p class="honeypot"><label for="honey">Se estiver vendo isto, deixe este campo em branco</label><input type="text" name="honey"></p>
-          <p><label for="mensagem">Mensagem</label><textarea name="mensagem" cols="30" rows="5"></textarea></p>
-          <p><button>Solicitar orçamento</button></p>
-        </form>
-      </footer>
-    
     </article>
 
     <aside class="lista lista-produtos" data-cell="1of3">
@@ -122,7 +120,10 @@ layout: default
 
       <footer class="page-content banner-container">
         <p><a href="tel:+551140705808" onclick="ga('send', 'event', 'Contato', 'Telefone fixo', 'Banner lateral');"><img src="{{ site.baseurl }}/img/banner-televendas.png" alt="Contato por televendas: (11) 4070-5808"></a></p>
-        <p><a href="tel:+5511995559624" onclick="ga('send', 'event', 'Contato', 'Whatsapp: (11) 99555 9624', 'Banner lateral');"><img src="{{ site.baseurl }}/img/banner-whatsapp.png" alt="Contato pelo Whatsapp: (11) 99555 9624"></a></p>
+        <h4>Catálogos</h4>
+        {% for download in site.data.features.catalogos %}
+          <p><a href="{{ site.baseurl }}/downloads/{{ download.file }}" target="_blank" data-btn="100%" onclick="ga('send', 'event', 'Download', '{{ download.title }}', '{{ page.title }}');">{{ download.title }}</a></p>
+        {% endfor %}
       </footer>
 
     </aside>

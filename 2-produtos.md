@@ -4,7 +4,9 @@ title: Produtos para manutenção industrial
 menu-title: Produtos
 permalink: /produtos/
 excerpt: >
-  A Endutek fornece todos os itens necessários para montagem e manutenção industrial. Veja detalhes dos tipos de mangueiras, conexões, tubos, entre outros produtos de manutenção industrial.
+  Selecione os produtos e monte seu orçamento aqui. Basta clicar no botão.
+  Temos tudo para montagem e manutenção industrial: mangueiras, conexões,
+  tubos, e mais. Conheça a nossa linha completa.
 destaques:
   - 
     img: abracadeiras.jpg

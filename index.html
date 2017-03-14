@@ -9,7 +9,7 @@ layout: default
       {% if site.data.features.categorias contains c_name %}
         <article class="slide" data-grid="column around">
           <h4 class="slide-title" data-cell="shrink"><a href="{{ site.base }}{{ c.url }}">{{ c.title }}</a></h4>
-          <p class="slide-excerpt" data-cell="shrink">{{ c.excerpt | strip_html | truncatewords: 15 }}</p>
+          <p class="slide-excerpt" data-cell="shrink">{{ c.excerpt | strip_html | truncatewords: 25 }}</p>
         </article>
       {% endif %}
     {% endfor %}
