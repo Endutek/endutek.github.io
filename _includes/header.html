@@ -19,7 +19,6 @@
           <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.menu-title }}</a>
           {% endif %}
         {% endfor %}
-        <a class="page-link" href="http://blog.endutek.com.br" onclick="ga('send', 'event', 'Navegar', 'Blog', 'Barra de navegação');">Blog</a>
         <a class="page-link" href="{{ site.data.empresa.facebook }}" target="_blank" onclick="ga('send', 'event', 'Navegar', 'Facebook', 'Barra de navegação');">Facebook</a>
         <a class="page-link" href="#contato" onclick="ga('send', 'event', 'Contato', 'Abrir formulário', 'Barra de navegação');">Contato</a>
         {% assign telefone = site.data.empresa.telefones[0] %}

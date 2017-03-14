@@ -11,14 +11,13 @@ layout: default
     <div data-cell="2of3">
       <h1 class="post-title">{{ page.title }}</h1>
     </div>
-      {% if categoria != '' %}
-        <div data-cell="1of3" data-text="center">
-          <p class="add-button-container"><button class="adicionar-produto icon" data-btn="round brand 100%" data-value="{{ page.title }}" onclick="ga('send', 'event', 'Adicionar ao orçamento', '{{ page.title }}', 'Cabeçalho');">Solicite seu orçamento</button></p>
-          <p><small>Clique para adicionar este produto e ir para o orçamento.</small></p>
-          <p><strong>Responderemos em até 24 horas.</strong></p>
-        </div>
-      {% endif %}
-    </div>
+    {% if categoria != '' %}
+      <div data-cell="1of3" data-text="center">
+        <p><a href="#form-orcamento" class="adicionar-produto icon" data-btn="round brand 100%" onclick="ga('send', 'event', 'Ir para o orçamento', '{{ page.title }}', 'Cabeçalho');scrollToTarget(this.hash);">Solicite seu orçamento</a></p>
+        <p><strong>Responderemos em até 24 horas.</strong></p>
+      </div>
+    {% endif %}
+  </div>
 </header>
 
 <div class="page-content">
@@ -37,8 +36,8 @@ layout: default
 
         {{ content }}
 
-        <footer class="form-orcamento">
-          <form action="/enviar_email.php" method="post">
+        <footer class="form-orcamento" id="form-orcamento">
+          <form action="/enviar_email.php" method="post"><input type="hidden" name="assunto" value="Orçamento">
             <div data-grid="center spacing">
               <h4 data-cell="3of4">Orçamento</h4>
               <div data-cell="shrink"><img src="{{ site.baseurl }}/img/badge-24h.png" alt="Atendemos em até 24 horas"></div>
@@ -46,54 +45,38 @@ layout: default
             <p><label for="nome">Nome</label><input type="text" name="nome" placeholder="Nome completo" required></p>
             <p><label for="email">E-mail</label><input type="email" name="email" placeholder="email@dominio.com" required></p>
             <p><label for="telefone">Telefone</label><input type="tel" name="telefone" placeholder="(00) 9 0000 0000" required></p>
-            <label class="tags-container-label" for="produtos" data-block="100%">Produtos</label>
-            <div class="tags-container">
-              {% for categoria in site.categorias %}
-              <section class="tag-categoria" data-grid="row wrap">
-                <label class="tag tag-categoria-title" data-checkable data-block="100%"><input type="checkbox" name="produtos[]" value="{{ categoria.title }}"> {{ categoria.title }}</label>
-                {% for produto in site.produtos %}
-                  {% if produto.url contains categoria.url %}
-                    <label class="tag tag-subitem" data-checkable data-cell="shrink"><input type="checkbox" name="produtos[]" value="{{ produto.title }}"> {{ produto.title }}</label>
-                  {% endif %}
-                {% endfor %}
-              </section>
-              {% endfor %}
-            </div>
             <p class="honeypot"><label for="honey">Se estiver vendo isto, deixe este campo em branco</label><input type="text" name="honey"></p>
             <p><label for="mensagem">Mensagem</label><textarea name="mensagem" cols="30" rows="5"></textarea></p>
             <p><button>Solicitar orçamento</button></p>
           </form>
         </footer>
 
-        <aside>
-          {% assign has_subitems = false %}
-          {% capture related %}
-          {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
-            {% if p_categoria == categoria %}
-              {% assign has_subitems = true %}
-              <div data-grid="column justify" class="produto-relacionado">
-                <div class="produto-thumb" data-grid="center">
-                  {% include img_from_url.html
-                    src = p.url
-                    alt = p.title
-                    format = 'jpg'
-                  %}
-                </div>
-                <div data-cell="shrink">
-                  <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
-                </div>
+        {% assign has_subitems = false %}
+        {% capture related %}
+        {% for p in site.produtos %}{% capture p_categoria %}{% assign p_crumbs = p.url | split: '/' %}{{ p_crumbs[2] }}{% endcapture %}
+          {% if p_categoria == categoria %}
+            {% assign has_subitems = true %}
+            <div data-grid="column justify" class="produto-relacionado">
+              <div class="produto-thumb" data-grid="center">
+                {% include img_from_url.html
+                  src = p.url
+                  alt = p.title
+                  format = 'jpg'
+                %}
               </div>
-            {% endif %}
-          {% endfor %}
-          {% endcapture %}
-          {% if has_subitems %}
-            <nav>
-              <h4>Produtos relacionados</h4>
-              <div data-grid="wrap">{{ related }}</div>
-            </nav>
+              <div data-cell="shrink">
+                <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+              </div>
+            </div>
           {% endif %}
-
-        </aside>
+        {% endfor %}
+        {% endcapture %}
+        {% if has_subitems %}
+          <nav>
+            <h4>Produtos relacionados</h4>
+            <div data-grid="wrap">{{ related }}</div>
+          </nav>
+        {% endif %}
 
       </div>
 

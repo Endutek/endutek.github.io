@@ -110,7 +110,7 @@
         &:hover, &:focus
             box-shadow: none
             background-color: $ciano
-            color: $brand-color
+            color: $azul-escuro
 
     &.black
         background-color: $grey-color-dark
@@ -309,7 +309,7 @@
             font:
                 size: 14px
                 weight: bold
-            color: $grey-color
+            color: $grey-color-dark
 
     &:not(.selected)
         .produtos-subitem
@@ -344,59 +344,5 @@
                     animation-duration: 0.1s * $i
 
 .form-orcamento
-    margin-top: $spacing-unit
-    margin-bottom: $spacing-unit
-
-    .wrapper
-        padding-top: $spacing-unit / 4
-        padding-bottom: $spacing-unit / 4
-
-.tags-container-label
-    padding: 10px
-    background-color: $grey-color
-    color: $grey-color-light
-    .count
-        letter-spacing: 1px
-        margin-left: $spacing-unit / 4
-        color: #fff
-
-.tags-container
-    max-height: 200px
-    overflow: auto
-    .tag
-        padding: .5em
-        position: relative
-        min-width: 30%
-
-        input
-            position: absolute
-            top: .15em
-            left: .15em
-
-    .tag-categoria-title
-        font-size: $base-font-size
-        padding-left: 1.5em
-        input
-            top: .45em
-
-    .tag-categoria
-        padding: 0.5em
-        border-top: 1px dashed $background-color
-        background-color: $grey-color-light
-        transform-origin: top left
-        &.off
-            display: none
-
-    &.closed
-        .tag-categoria
-            display: none
-
-    .tag-subitem
-        margin: 0 10px 10px 0
-        padding-left: 2em
-        background-color: $background-color
-        border-radius: 4px
-        box-shadow: -1px 1px 3px 0 rgba($grey-color, .3)
-        &.off
-            display: none
-
+    padding-top: $spacing-unit
+    padding-bottom: $spacing-unit

@@ -17,14 +17,9 @@ if ($_POST['nome'] !== '' && $_POST['email'] !== '' && $_POST['telefone'] !== ''
 	$email_conteudo .= "Email: $email \n";
 	$email_conteudo .= "Telefone: $telefone \n";
 	//Orçamento
-	if (isset($_POST['produtos'])) {
-		$email_assunto = "Solicitação de orçamento $my_domain"; // Este será o assunto da mensagem
+	if (isset($_POST['assunto'])) {
+		$email_assunto = $_POST['assunto'] . " de " . $nome . " - " . $telefone; // Este será o assunto da mensagem
 		$isOrc = true;
-		$email_conteudo .= "\n=== Produtos ===\n\n";
-		$produtos = $_POST['produtos'];
-		foreach ($produtos as $nome => $valor) {
-			$email_conteudo .= "$valor\n";
-		}
 	}
 	$email_conteudo .= "\n=== Mensagem ===\n\n$mensagem \n";
 	//Seta os Headers (Alterar somente caso necessario)
