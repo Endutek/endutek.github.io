@@ -21,9 +21,9 @@ Desde o início da cadeia produtiva, até o transporte de materiais para os pont
   {% endcapture %}
   {% capture colorcycle %}{% cycle '', 'hero red' 'hero black', 'hero', 'hero grey', 'hero', '', 'hero red'  %}{% endcapture %}
   {% capture opcycle %}{% cycle '', 'opacity:.3;', 'opacity:.2;'  %}{% endcapture %}
-  <div data-cell class="square {{ colorcycle }}">
+  <a href="{{ site.baseurl }}{{ ap.url }}" data-cell class="square {{ colorcycle }}">
     <div class="square-bg" style="background-image: url('{{ ap_img | strip }}'); {{ opcycle }}"></div>
-    <p><a href="{{ site.baseurl }}{{ ap.url }}">{{ ap.title }}</a></p>
-  </div>
+    <p>{{ ap.title }}</p>
+  </a>
 {% endfor %}
 </div>
