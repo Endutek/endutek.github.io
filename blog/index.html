@@ -9,10 +9,10 @@ excerpt: >
     <div data-cell="2of3">
         <ul class="post-list">
             {% for post in paginator.posts %}
-                <li>
+                <li class="post-item">
                     <h2 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
                     <div class="post-meta">{{ post.date | date: "%d/%m/%Y" }}</div>
-                    <p>{{ post.excerpt | strip_html }}</p>
+                    <p class="post-excerpt">{{ post.excerpt | strip_html }}</p>
                 </li>
             {% endfor %}
         </ul>

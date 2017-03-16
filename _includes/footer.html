@@ -12,7 +12,7 @@
     <div data-cell="1of3 fill" data-grid="row nowrap spacing">
 
       <div data-cell="1of2">
-        <ul class="post-list">
+        <ul class="seamless">
           {% for my_page in site.pages %}
             {% if my_page.menu-title %}
             <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.menu-title }}</a></li>
@@ -22,7 +22,7 @@
       </div>
       
       <div data-cell="1of2">
-        <ul class="post-list">
+        <ul class="seamless">
           <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
           <li><a href="{{ site.data.empresa.facebook }}" target="_blank" onclick="ga('send', 'event', 'Navegar', 'Facebook', 'Rodapé');">Facebook</a></li>
           {% assign telefone = site.data.empresa.telefones[0] %}
