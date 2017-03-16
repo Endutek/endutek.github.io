@@ -235,6 +235,19 @@
 .post-content
     margin-bottom: $spacing-unit
 
+    >
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure, table
+            @extend .wrapper
+    
+        ol, ul
+            padding-left: $spacing-unit * 1.5
+            +media-query($on-laptop)
+                padding-left: $spacing-unit
+
+        .hero
+            padding-top: $spacing-unit / 2
+            padding-bottom: $spacing-unit / 2
+
     h1, h2, h3, h4, h5, h6, .container
         margin-top: $spacing-unit / 2
         margin-bottom: $spacing-unit / 2

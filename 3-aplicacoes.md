@@ -13,7 +13,7 @@ Estamos em todos os lugares!
 
 Desde o início da cadeia produtiva, até o transporte de materiais para os pontos de venda, nossos produtos estão presentes em todos os processos. Atendemos diversos tipos de empresas, de colheitadeiras na zona rural a grandes siderúrgicas.
 
-<div data-grid="wrap" class="square-grid">
+<div data-grid="wrap" class="wrapper square-grid">
 {% for ap in site.aplicacoes %}
   {% capture ap_img %}
   {% assign crumbs = ap.url | split: "/" %}
