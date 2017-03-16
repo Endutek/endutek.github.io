@@ -39,7 +39,7 @@
         line-height: $base-line-height
         margin-left: $spacing-unit / 2
 
-    +media-query($on-laptop)
+    +media-query(1130px)
         position: absolute
         top: 10px
         right: 10px
@@ -129,6 +129,7 @@
     padding-top: $spacing-unit * 2
     padding-bottom: $spacing-unit * 2
     background:
+        color: #0b2733
         image: url('/img/produto-cover.jpg')
         repeat: no-repeat
         position: center
@@ -150,16 +151,27 @@
         display: none
 
 .square-grid
+
     .square
+        display: block
         position: relative
         font-size: 19px
         font-family: "Heebo", sans-serif
         width: 180px
         height: 180px
+        color: #000
+        transition: transform .3s ease-in-out
+        transform: scale(1)
+        &:hover, &:focus
+            box-shadow: 0 0 10px 0 $grey-color
+            transform: scale(1.05)
+            z-index: 1
+
+        &:not(.hero)
+            background-color: #fff
 
         +media-query($on-palm)
             width: 100%
-
 
         p
             position: absolute
@@ -169,12 +181,8 @@
             margin: 0
             line-height: 1
 
-        a
-            color: #000
-
         &.hero
-            a
-                color: #fff
+            color: #fff
 
     .square-bg
         background-size: cover
@@ -187,34 +195,59 @@
     background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/brushed_alu.png)
 
 .post-list
-    margin: 0
-    list-style: none
+    @extend ul.seamless
 
-    > li
-        margin-top: $spacing-unit / 4
+    .post-item
+        margin-bottom: $spacing-unit / 2
+        background-color: #fff
+        border-radius: 4px
+        box-shadow: 0 2px 3px 0 rgba(black, .1)
+        padding: 15px
+        +media-query($on-laptop)
+            padding: 10px
+        +media-query($on-palm)
+            padding: 5px
+
+    .post-title
+        margin-top: 0
         margin-bottom: $spacing-unit / 4
+        font-size: 30px
+        +media-query($on-laptop)
+            font-size: 28px
+        +media-query($on-palm)
+            font-size: 24px
 
 .post-meta
     font-size: $small-font-size
     color: $grey-color
 
+.post-excerpt
+    margin-bottom: 0
+
 .pagination
     margin-top: $spacing-unit
     margin-bottom: $spacing-unit
-    padding-left: 25px
-    padding-right: 25px
     background-color: $grey-color-light
-    border-radius: 500px
+    border-radius: 4px
+    overflow: hidden
     line-height: 2.5
-    +media-query($on-laptop)
-        padding-left: 15px
-        padding-right: 15px
     a
         display: inline-block
+        text-decoration: none
+        transition: .3s ease-in-out
+        &:hover, &:focus
+            background-color: rgba($brand-color, .1)
+
     .control
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
+        > *
+            padding-left: 25px
+            padding-right: 25px
+            +media-query($on-laptop)
+                padding-left: 15px
+                padding-right: 15px
     .prev
         text-align: left
     .page_number
