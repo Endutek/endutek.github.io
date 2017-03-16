@@ -23,7 +23,7 @@
       
       <div data-cell="1of2">
         <ul class="post-list">
-          <li><a href="http://blog.endutek.com.br/" onclick="ga('send', 'event', 'Navegar', 'Blog', 'Rodapé');">Blog</a></li>
+          <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
           <li><a href="{{ site.data.empresa.facebook }}" target="_blank" onclick="ga('send', 'event', 'Navegar', 'Facebook', 'Rodapé');">Facebook</a></li>
           {% assign telefone = site.data.empresa.telefones[0] %}
           <li><a href="tel:{{ telefone.numero }}" onclick="ga('send', 'event', 'Contato', '{{ telefone.title }}', 'Rodapé');">{{ telefone.title }}</a></li>

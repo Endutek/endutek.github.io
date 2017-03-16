@@ -1,0 +1,11 @@
+
+<h4>Categorias</h4>
+<p><em>para fazer...</em></p>
+
+<footer class="page-content banner-container">
+    <p><a href="tel:+551140705808" onclick="ga('send', 'event', 'Contato', 'Telefone fixo', 'Banner lateral');"><img src="{{ site.baseurl }}/img/banner-televendas.png" alt="Contato por televendas: (11) 4070-5808"></a></p>
+    <h4>Catálogos</h4>
+    {% for download in site.data.features.catalogos %}
+        <p><a href="{{ site.baseurl }}/downloads/{{ download.file }}" target="_blank" data-btn="100%" onclick="ga('send', 'event', 'Download', '{{ download.title }}', '{{ page.title }}');">{{ download.title }}</a></p>
+    {% endfor %}
+</footer>

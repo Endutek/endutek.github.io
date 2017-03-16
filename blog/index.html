@@ -1,0 +1,40 @@
+---
+layout: page
+title: Blog Endutek
+excerpt: >
+    Aprenda e se mantenha informado sobre a indústria e tecnologias para a área industrial. Este é o blog da Endutek Mangueiras e Conexões.
+---
+
+<div data-grid="spacing">
+    <div data-cell="2of3">
+        <ul class="post-list">
+            {% for post in paginator.posts %}
+                <li>
+                    <h2 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+                    <div class="post-meta">{{ post.date | date: "%d/%m/%Y" }}</div>
+                    <p>{{ post.excerpt | strip_html }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="pagination" data-grid="center row nowrap">
+            <div class="control prev" data-cell="1of3">
+            {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path }}">Mais recentes</a>
+            {% else %}
+                <span>Primeira página</span>
+            {% endif %}
+            </div>
+            <span class="control page_number" data-cell="1of3">{{ paginator.page }} de {{ paginator.total_pages }}</span>
+            <div class="control next" data-cell="1of3">
+            {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path }}">Mais antigos</a>
+            {% else %}
+                <span>Última página</span>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    <aside data-cell="1of3">
+        {% include blog_sidebar.html %}
+    </aside>
+</div>

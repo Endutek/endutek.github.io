@@ -198,6 +198,30 @@
     font-size: $small-font-size
     color: $grey-color
 
+.pagination
+    margin-top: $spacing-unit
+    margin-bottom: $spacing-unit
+    padding-left: 25px
+    padding-right: 25px
+    background-color: $grey-color-light
+    border-radius: 500px
+    line-height: 2.5
+    +media-query($on-laptop)
+        padding-left: 15px
+        padding-right: 15px
+    a
+        display: inline-block
+    .control
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
+    .prev
+        text-align: left
+    .page_number
+        text-align: center
+    .next
+        text-align: right
+
 .post-header
     margin-bottom: $spacing-unit
 
@@ -271,7 +295,7 @@
     [data-btn]
         font-size: 14px
 
-.section-about
+// .section-about
 
 .section-features
     padding-left: $spacing-unit
