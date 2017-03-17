@@ -18,16 +18,24 @@ Quanto à sua instalação, os terminais podem ser de dois modelos diferentes:
 
 ### Terminal para Tubo
 
-Possui extremidade com Sistema Ermeto e tem a característica de permitir a ligação da mangueira diretamente, conforme a tabela abaixo.
-
-*Diâmetro externo de tubos (mm):*
-
-|  4    | •10   |  18   |   28  |
-|  5    | •12   |  19   |  •30  |
-| •6    |  12,7 | •20   |   32  |
-|  6,4  |  14   |  22   |  •35  |
-| •8    |  15   | •25   |  •38  |
-|  9,5  | •16   |  25,4 |   42  |
+<div class="wrapper" data-grid="spacing">
+    <div data-cell="1of2">
+        <p>Possui extremidade com Sistema Ermeto e tem a característica de permitir a ligação da mangueira diretamente, conforme a tabela abaixo.</p>
+    </div>
+    <div data-cell="1of2">
+        <table>
+            <caption>Diâmetro externo de tubos (mm):</caption>
+            <tbody>
+                <tr> <td>4</td> <td>•10</td> <td>18</td> <td>28</td> </tr>
+                <tr> <td>5</td> <td>•12</td> <td>19</td> <td>•30</td> </tr>
+                <tr> <td>•6</td> <td>12,7</td> <td>•20</td> <td>32</td> </tr>
+                <tr> <td>6,4</td> <td>14</td> <td>22</td> <td>•35</td> </tr>
+                <tr> <td>•8</td> <td>15</td> <td>•25</td> <td>•38</td> </tr>
+                <tr> <td>9,5</td> <td>•16</td> <td>25,4</td> <td>42</td> </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
 ### Terminal ponta lisa
 
@@ -59,12 +67,18 @@ Tem a característica de transformar a extremidade da mangueira em um cone de 24
 
 ### Terminal Reusável Tipo Concha
 
-As capas de terminais reusáveis para mangueiras de 4 espirais de aço traços -20 e -24 são do tipo concha, como mostra a figura.
+<div class="wrapper" data-grid="spacing">
+    <div data-cell>
+        <p>As capas de terminais reusáveis para mangueiras de 4 espirais de aço traços -20 e -24 são do tipo concha, como mostra a figura.</p>
+    </div>
+    <figure data-cell>
+        <figcaption>Exemplo: Terminal para Tubo</figcaption>
+        <img src="{{ site.baseurl }}/img/posts/terminal-reusave-tipo-concha.gif" alt="Terminal reusáve tipo concha">
+    </figure>
+</div>
 
-Exemplo: Terminal para Tubo
-![Terminal reusáve tipo concha]({{ site.baseurl }}/img/posts/terminal-reusave-tipo-concha.gif)
 
-### Matérias primas
+## Matérias primas
 
 | Componentes | Aço   | Latão | Inox  |
 | ----------- | ----- | ----- | ----- |
@@ -72,7 +86,7 @@ Exemplo: Terminal para Tubo
 | Anel de penetração |  Aço SAE 1008/1010 trefilado, tratado termicamente | Latão SAE CA 270 trefilado | Inox SAE 30316 trefilado |
 | Porca de aperto    | Aço SAE 1212/1213 trefilado | Latão SAE CA 360 trefilado | Inox SAE 30316 trefilado |
 
-### Tratamentos superficiais
+## Tratamentos superficiais
 
 **Aço** - Fosfatização de acordo com SAE J514 APR 80. Resiste a 32 horas de ensaio de Névoa Salina (*Salt Spray*) ASTM B 117.
 

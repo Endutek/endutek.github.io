@@ -37,9 +37,16 @@ Nesse caso aparece o código "ST" (Sem Terminal).
 
 ## Revestimento de Mangueiras
 
-Os revestimentos efetuados sobre mangueiras têm sempre a finalidade de protegê-la de ações do meio ambiente, como alta temperatura, ação de óleos ou graxas, ação corrosiva ou ação abrasiva.
+<div class="wrapper" data-grid="center spacing">
+  <div data-cell="1of2">
+    <p>Os revestimentos efetuados sobre mangueiras têm sempre a finalidade de protegê-la de ações do meio ambiente, como alta temperatura, ação de óleos ou graxas, ação corrosiva ou ação abrasiva.</p>
+    <p>Podemos fornecer as nossas mangueiras como revestimentos de proteção como segue a tabela.</p>
+  </div>
+  <div data-cell="1of2">
+    <img src="{{ site.baseurl }}/img/posts/especificacao-de-mangueiras-e-terminais (6).gif" alt="Exemplo de especificação dos tipos de revestimento">
+  </div>
+</div>
 
-Podemos fornecer as nossas mangueiras como revestimentos de proteção como segue a tabela.
 
 <table>
   <thead>
@@ -96,5 +103,3 @@ Podemos fornecer as nossas mangueiras como revestimentos de proteção como segu
     </tr>
   </tbody>
 </table>
-
-<img src="{{ site.baseurl }}/img/posts/especificacao-de-mangueiras-e-terminais (6).gif" alt="Exemplo de especificação dos tipos de revestimento">

@@ -3,9 +3,14 @@ title: Comprimento de Mangueiras
 categories: informacoes-tecnicas
 ---
 
-O comprimento de qualquer mangueira hidráulica ERMETO é a distância entre as extremidades da mesma, incluindo os seus respectivos terminais (quando existirem) conforme mosta a figura:
-
-![Esquema: Comprimento das Mangueiras]({{ site.baseurl }}/img/posts/comprimento-mangueiras.gif)
+<div class="wrapper hero white" data-grid="center spacing">
+    <div data-cell="1of3">
+        <p>O comprimento de qualquer mangueira hidráulica ERMETO é a distância entre as extremidades da mesma, incluindo os seus respectivos terminais (quando existirem) conforme mosta a figura:</p>
+    </div>
+    <div data-cell="1of3">
+        <img src="{{ site.baseurl }}/img/posts/comprimento-mangueiras.gif" alt="Esquema: Comprimento das Mangueiras">
+    </div>
+</div>
 
 ## Comprimento máximo possível para mangueiras
 
