@@ -5,7 +5,7 @@ categories: informacoes-tecnicas
 
 <div class="wrapper hero white" data-grid="center spacing">
     <div data-cell="1of3">
-        <p>O comprimento de qualquer mangueira hidráulica ERMETO é a distância entre as extremidades da mesma, incluindo os seus respectivos terminais (quando existirem) conforme mosta a figura:</p>
+        <p>O comprimento de qualquer mangueira hidráulica Endutek é a distância entre as extremidades da mesma, incluindo os seus respectivos terminais (quando existirem) conforme mosta a figura:</p>
     </div>
     <div data-cell="1of3">
         <img src="{{ site.baseurl }}/img/posts/comprimento-mangueiras.gif" alt="Esquema: Comprimento das Mangueiras">
@@ -14,7 +14,7 @@ categories: informacoes-tecnicas
 
 ## Comprimento máximo possível para mangueiras
 
-Para as mangueira ERMETO, em qualquer traço, o comprimento máximo é de 19000 milímetros, com exceção da mangueira de teflon, nossa referência MTF.
+Para as mangueira Endutek, em qualquer traço, o comprimento máximo é de 19000 milímetros, com exceção da mangueira de teflon, nossa referência MTF.
 
 - Traços 4, 5, 6, 8, 10 e 12: 16000 milímetros;
 - Traço 16: 6000 milímetros.

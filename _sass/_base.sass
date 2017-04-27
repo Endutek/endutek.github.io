@@ -147,7 +147,7 @@ pre
         width: 20px
         height: 20px
         color: inherit
-        path, rect, polygon
+        path, polygon, rect, circ
             fill: currentcolor
 
 .svg-container
@@ -155,6 +155,42 @@ pre
         max-width: 100%
         height: auto
 
+.btn-share
+    display: inline-block
+    padding: 10px
+    width: 40px
+    height: 40px
+    border-radius: 500px
+    &:hover, &:focus, &:active
+        box-shadow: 0 0 0 1px #fff, 0 3px 8px 0 rgba(black, .5)
+    svg
+        width: 20px
+        height: 20px
+        color: inherit
+        path, polygon, rect, circ
+            fill: currentcolor
+
+    &-facebook
+        background-color: #3b5999
+        svg
+            color: #fff
+    &-google-plus
+        background-color: #dd4b39
+        svg
+            color: #fff
+    &-linkedin
+        background-color: #0077B5
+        svg
+            color: #fff
+    &-twitter
+        background-color: #55acee
+        svg
+            color: #fff
+    &-whatsapp
+        background-color: #25D366
+        svg
+            color: #fff
+        
 
 
 @keyframes zoom-in

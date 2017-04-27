@@ -1,0 +1,9 @@
+{% assign href = site.url | append: site.baseurl | append: page.url %}
+
+<a
+	class="btn-share btn-share-whatsapp"
+	href="whatsapp://send?text={{ page.title | append: ' ' | append: href | cgi_escape }}"
+	target="_top"
+	onclick="window.parent.null;ga('send', 'event', 'Compartilhar', 'Whatsapp', '{{ site.baseurl }}{{ page.url }} {{ include.position }}');"
+	title="Enviar pelo Whatsapp (apenas no celular)"
+>{% include icon/whatsapp.svg %}</a>

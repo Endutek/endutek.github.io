@@ -292,6 +292,21 @@
         margin-top: $spacing-unit / 3
         margin-bottom: $spacing-unit / 3
 
+.post-navigation
+    a
+        display: inline-block
+        padding: $spacing-unit / 2
+        background-color: $grey-color
+        color: #fff
+        &:hover, &:focus, &:active
+            text-decoration: none
+            background-color: $brand-color
+            box-shadow: 0 0 5px 0 rgba(black, .5)
+    .prev
+        text-align: left
+    .next
+        text-align: right
+
 .slideshow
     position: relative
     height: 260px
