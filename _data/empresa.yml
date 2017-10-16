@@ -1,12 +1,8 @@
 endereco: "Av. Dona Ruyce Ferraz Alvim, 379"
 cidade: "Diadema - SP"
 telefones:
-  - title: "(11) 4070-5808"
-    numero: "+551140705808"
-  # - title: "Whatsapp: (11) 99555 9624"
-  #   numero: "+5511995559624"
-  # - title: "(11) 4071-1808"
-  #   numero: "+551140711808"
+  - title: "(11) 4071-1889"
+    numero: "+551140711889"
 emails:
   - title: Contato
     mailto: endutek@endutek.com.br
