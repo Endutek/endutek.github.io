@@ -162,6 +162,9 @@
         color: #000
         transition: transform .3s ease-in-out
         transform: scale(1)
+        backface-visibility: hidden
+        -webkit-font-smoothing: subpixel-antialiased
+        filter: blur(0)
         &:hover, &:focus
             box-shadow: 0 0 10px 0 $grey-color
             transform: scale(1.05)
