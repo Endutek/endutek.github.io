@@ -47,7 +47,7 @@ description: 'Somos especialistas em mangueiras e conexões desde 1994. Conheça
   mesmo.
 
 '
-baseurl: ''
+baseurl: 
 url: http://endutek.com.br
 markdown: kramdown
 paginate: 5
