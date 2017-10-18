@@ -1,6 +1,8 @@
 ---
 title: Comprimento de Mangueiras
-categories: informacoes-tecnicas
+date: 2016-12-08 00:00:00 Z
+categories:
+- informacoes-tecnicas
 ---
 
 <div class="wrapper hero white" data-grid="center spacing">

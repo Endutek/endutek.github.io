@@ -1,57 +1,47 @@
 ---
-layout: produto
 title: Produtos para manutenção industrial
+permalink: "/produtos/"
+layout: produto
 menu-title: Produtos
-permalink: /produtos/
-excerpt: >
-  Selecione os produtos e monte seu orçamento aqui. Basta clicar no botão.
-  Temos tudo para montagem e manutenção industrial: mangueiras, conexões,
-  tubos, e mais. Conheça a nossa linha completa.
+excerpt: 'Selecione os produtos e monte seu orçamento aqui. Basta clicar no botão.
+  Temos tudo para montagem e manutenção industrial: mangueiras, conexões, tubos, e
+  mais. Conheça a nossa linha completa.
+
+'
 destaques:
-  - 
-    img: abracadeiras.jpg
-    title: Abraçadeiras
-    link: /produtos/abracadeiras/
-  - 
-    img: borrachas.jpg
-    title: Borrachas
-    link: /produtos/lencois-de-borracha/
-  -
-    img: conexoes-galvanizadas.jpg
-    title: Conexões Galvanizadas Tupy
-    link: /produtos/conexoes/conexoes-galvanizadas/
-  -
-    img: conexoes-hidraulicas.jpg
-    title: Conexões Hidráulicas Ermeto
-    link: /produtos/conexoes/conexoes-hidraulicas/
-  -
-    img: conexoes-pneumaticas.jpg
-    title: Conexões Pneumáticas Festo
-    link: /produtos/conexoes/conexoes-pneumaticas/
-  -
-    img: correias.jpg
-    title: Correias
-    link: /produtos/correias-e-polias/
-  -
-    img: engates-rapidos.jpg
-    title: Engates
-    link: /produtos/engates-rapidos/
-  -
-    img: flexiveis-metalicos.jpg
-    title: Flexíveis Metálicos
-    link: /produtos/flexiveis-metalicos/
-  -
-    img: lubrificacao.jpg
-    title: Lubrificação
-    link: /produtos/lubrificantes-industriais/
-  -
-    img: rodizios.jpg
-    title: Rodízios
-    link: /produtos/rodizios-e-rodas/
-  -
-    img: valvula-de-esfera.jpg
-    title: Válvulas
-    link: /produtos/valvula-de-esfera/
+- img: abracadeiras.jpg
+  title: Abraçadeiras
+  link: "/produtos/abracadeiras/"
+- img: borrachas.jpg
+  title: Borrachas
+  link: "/produtos/lencois-de-borracha/"
+- img: conexoes-galvanizadas.jpg
+  title: Conexões Galvanizadas Tupy
+  link: "/produtos/conexoes/conexoes-galvanizadas/"
+- img: conexoes-hidraulicas.jpg
+  title: Conexões Hidráulicas Ermeto
+  link: "/produtos/conexoes/conexoes-hidraulicas/"
+- img: conexoes-pneumaticas.jpg
+  title: Conexões Pneumáticas Festo
+  link: "/produtos/conexoes/conexoes-pneumaticas/"
+- img: correias.jpg
+  title: Correias
+  link: "/produtos/correias-e-polias/"
+- img: engates-rapidos.jpg
+  title: Engates
+  link: "/produtos/engates-rapidos/"
+- img: flexiveis-metalicos.jpg
+  title: Flexíveis Metálicos
+  link: "/produtos/flexiveis-metalicos/"
+- img: lubrificacao.jpg
+  title: Lubrificação
+  link: "/produtos/lubrificantes-industriais/"
+- img: rodizios.jpg
+  title: Rodízios
+  link: "/produtos/rodizios-e-rodas/"
+- img: valvula-de-esfera.jpg
+  title: Válvulas
+  link: "/produtos/valvula-de-esfera/"
 ---
 
 A Endutek fornece todos os itens necessários para montagem e manutenção industrial. Veja detalhes dos tipos de mangueiras, conexões, tubos, entre outros produtos de manutenção industrial.

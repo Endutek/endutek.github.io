@@ -1,5 +1,6 @@
 ---
 ---
+
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^www.endutek.com.br$ [NC]
 RewriteRule ^(.*)$ http://endutek.com.br/$1 [R=301,L]

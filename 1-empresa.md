@@ -1,12 +1,12 @@
 ---
-layout: page
 title: Endutek - A sua empresa de mangueiras e conexões
+permalink: "/empresa/"
+layout: page
 menu-title: Empresa
-permalink: /empresa/
-excerpt: >
-    Oferecemos uma linha diversificada de mangueiras, conexões,
-    tubos e materiais de borrachas e plásticos para manutenção
-    e montagem industrial.
+excerpt: 'Oferecemos uma linha diversificada de mangueiras, conexões, tubos e materiais
+  de borrachas e plásticos para manutenção e montagem industrial.
+
+'
 ---
 
 {% assign year = site.time | date: '%Y' %}
