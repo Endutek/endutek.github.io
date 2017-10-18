@@ -1,55 +1,63 @@
+---
 title: Endutek Mangueiras e Conexões
-description: > 
-  Somos especialistas em mangueiras e conexões desde 1994.
-  Conheça a nossa linha completa de materiais hidráulicos
-  e monte seu orçamento no nosso site agora mesmo.
-baseurl: "" # e.g. /blog
-url: "http://endutek.com.br"
+timezone: UTC
+collections:
+  aplicacoes:
+    title: Aplicacoes
+    output: true
+    permalink: aplicacoes/:path/
+  categorias:
+    title: Categorias
+    output: true
+    permalink: produtos/:path/
+  posts:
+    title: Posts
+    output: true
+  produtos:
+    title: Produtos
+    output: true
+    permalink: produtos/:path/
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: categorias
+  values:
+    layout: produto
+- scope:
+    path: ''
+    type: produtos
+  values:
+    layout: produto
+- scope:
+    path: ''
+    type: aplicacoes
+  values:
+    layout: aplicacao
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    permalink: blog/:categories/:title.html
+description: 'Somos especialistas em mangueiras e conexões desde 1994. Conheça a nossa
+  linha completa de materiais hidráulicos e monte seu orçamento no nosso site agora
+  mesmo.
 
-# Build settings
+'
+baseurl: ''
+url: http://endutek.com.br
 markdown: kramdown
 paginate: 5
 paginate_path: "/blog/:num/"
-
 exclude:
-  - desktop.ini
-  - gulpfile.js
-  - README.md
-
+- desktop.ini
+- gulpfile.js
+- README.md
 sass:
   style: compressed
-
 gems:
-  - jekyll-coffeescript
-  - jekyll-paginate
-
-collections:
-  categorias:
-    output: true
-    permalink: produtos/:path/
-  produtos:
-    output: true
-    permalink: produtos/:path/
-  aplicacoes:
-    output: true
-    permalink: aplicacoes/:path/
-
-defaults:
-  - scope:
-      type: categorias
-    values:
-      layout: produto
-  - scope:
-      type: produtos
-    values:
-      layout: produto
-  - scope:
-      type: aplicacoes
-    values:
-      layout: aplicacao
-  - scope:
-      type: posts
-    values:
-      layout: post
-      permalink: blog/:categories/:title.html
-
+- jekyll-coffeescript
+- jekyll-paginate

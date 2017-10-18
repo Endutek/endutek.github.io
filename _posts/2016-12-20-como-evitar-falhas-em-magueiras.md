@@ -1,6 +1,8 @@
 ---
 title: Como Evitar Falhas em Magueiras
-categories: informacoes-tecnicas
+date: 2016-12-20 00:00:00 Z
+categories:
+- informacoes-tecnicas
 ---
 
 As principais causas de falhas em mangueiras e seus terminais são:

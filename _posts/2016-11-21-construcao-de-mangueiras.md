@@ -1,6 +1,8 @@
 ---
 title: Construção de Mangueiras
-categories: informacoes-tecnicas
+date: 2016-11-21 00:00:00 Z
+categories:
+- informacoes-tecnicas
 ---
 
 Mangueiras são elementos flexíveis normalmente utilizados para interligar hidraulicamente componentes sujeitos a movimento relativo e/ou vibrações.

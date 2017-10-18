@@ -1,8 +1,11 @@
 ---
 title: Especificação de Mangueiras e Terminais
-categories: informacoes-tecnicas
-excerpt: >
-  Veja como especificar os terminais das mangueiras com exemplos
+date: 2016-12-19 00:00:00 Z
+categories:
+- informacoes-tecnicas
+excerpt: 'Veja como especificar os terminais das mangueiras com exemplos
+
+'
 ---
 
 ## Mangueira montada com terminais nas duas extremidades
