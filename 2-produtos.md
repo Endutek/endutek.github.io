@@ -76,7 +76,7 @@ A Endutek fornece todos os itens necessários para montagem e manutenção indus
   {% for p in page.destaques %}
     <div class="produto-relacionado" data-grid="center">
       <a href="{{ site.baseurl }}{{ p.link }}" class="produto-thumb">
-        <img src="{{ img_src = site.baseurl | append: '/img/destaques/' | append: p.img }}" alt="{{ p.title }}">
+        <img src="{{ site.baseurl | append: '/img/destaques/' | append: p.img }}" alt="{{ p.title }}">
         <div>{{ p.title }}</div>
       </a>
     </div>

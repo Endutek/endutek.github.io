@@ -58,6 +58,6 @@ exclude:
 - README.md
 sass:
   style: compressed
-gems:
+plugins:
 - jekyll-coffeescript
 - jekyll-paginate
