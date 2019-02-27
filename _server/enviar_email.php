@@ -7,8 +7,8 @@ if ($_POST['nome'] !== '' && $_POST['email'] !== '' && $_POST['telefone'] !== ''
 	$email = $_POST['email'];
 	$telefone = $_POST['telefone'];
 	$mensagem = $_POST['mensagem'];
-	$email_remetente = "criacao2@dnfg.com.br"; // deve ser uma conta de email do seu dominio
-	$email_destinatario = "criacao2@dnfg.com.br"; // pode ser qualquer email que receberá as mensagens
+	$email_remetente = "endutek@endutek.com.br"; // deve ser uma conta de email do seu dominio
+	$email_destinatario = "endutek@endutek.com.br"; // pode ser qualquer email que receberá as mensagens
 	$email_reply = "$email";
 	$email_assunto = "Contato do site $my_domain"; // Este será o assunto da mensagem
 	$isOrc = false;
